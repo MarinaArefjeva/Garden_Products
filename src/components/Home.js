@@ -16,8 +16,15 @@ export default function Home() {
       </div>
 
       <div className="icon">
-        <img src="./bag.svg" />
+        <img src="./assets/images/bag.svg" />
       </div>
+
+      <main>
+        <div className="Text">
+          <h1>Amazing Discounts</h1>
+          <h2>on Garden Products!</h2>
+        </div>
+      </main>
     </header>
   );
 }
