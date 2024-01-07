@@ -1,0 +1,22 @@
+.container {
+    width: 1360px;
+    height: 528px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.h1 {
+    font-size: 64px;
+    font-weight: 700;
+    /* gap: 32px; */
+}
+
+
+
+.Line {
+    width: 832px;
+    border: 1px;
+    color: rgba(221, 221, 221, 1);
+}

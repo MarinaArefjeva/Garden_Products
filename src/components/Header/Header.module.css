@@ -1,41 +1,9 @@
-/* header .logo {
-    width: 70px;
-    height: 70px;
-    margin-left: 40px;
-    margin-top: 30px;
-    margin-bottom: 28px;
-
-}
-
-header ul.nav {
-    float: center;
-    list-style: none;
-    margin-left: 351px;
-    margin-right: 461px;
-
-
-    display: flex;
-    font-weight: 500;
-    font-size: 20px;
-
-
-}
-
-header ul.nav li {
-    display: inline;
-    margin-left: 32px;
-}
-
-header .icon {
-    width: 48px;
-    height: 48px;
-    margin-left: 1352px;
-    margin-right: 39px;
-    margin-top: 41px;
-    margin-bottom: 39px;
-} */
-
 header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;

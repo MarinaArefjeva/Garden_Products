@@ -1,0 +1,29 @@
+.container {
+    width: 100%;
+    background: url("../../../assets/images/discount/plants.svg");
+    padding: 40px;
+    background-size: cover;
+    height: 600px;
+    margin-bottom: 80px;
+
+}
+
+.text {
+    /* transform: scale(-1, 1); */
+    color: white;
+    font-size: 96px;
+    font-weight: 700px;
+    margin-bottom: 40px;
+}
+
+.button_discount {
+    width: 220px;
+    height: 60px;
+    border-radius: 6px;
+    background: #393;
+    color: #FFF;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+}

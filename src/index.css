@@ -10,33 +10,4 @@ body {
   width: 100%;
   height: 128px;
   background-color: white;
-
-}
-
-.wrapper {
-  max-width: 518;
-  height: 26px;
-
-
-}
-
-
-
-main {
-  height: 600px;
-  background: url("./assets/images/plants.svg");
-
-}
-
-Text {
-  width: 1360px;
-  height: 212px;
-  color: white;
-  font-size: 56px;
-  font-weight: 700px;
-  font-family: 'Montserrat', sans-serif;
-  padding-top: 80px;
-  padding-bottom: 308px;
-  padding-left: 40px;
-  padding-right: 40px;
 }
