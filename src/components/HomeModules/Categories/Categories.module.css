@@ -5,28 +5,25 @@
 .container_title {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 40px;
-    /* width: 1360px;
-    height: 70px;
-    gap: 32px; */
 }
-
-/* .line {
-    transform: rotate(90deg);
-    height: 80%;
-} */
 
 .title {
-    /* font-size: 64px;
+    font-size: 64px;
     font-weight: 700;
-    padding-bottom: 40px; */
-}
 
+}
 
 .Line {
     width: 832px;
     border: 1px;
     color: rgba(221, 221, 221, 1);
+}
+
+.button {
+    width: 142px;
+    height: 36px;
 }
 
 .container_cards {

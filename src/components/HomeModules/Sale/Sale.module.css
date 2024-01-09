@@ -1,6 +1,7 @@
 .container_title {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 40px;
     font-size: 44px;
     font-weight: 700;
@@ -11,6 +12,12 @@
     border: 1px;
     color: rgba(221, 221, 221, 1);
 }
+
+.button {
+    width: 142px;
+    height: 36px;
+}
+
 
 .container_cards {
     display: flex;
@@ -25,8 +32,3 @@
     /* justify-content: center; */
     align-items: center;
 }
-
-/* .objects {
-    display: flex;
-    align-items: center;
-} */

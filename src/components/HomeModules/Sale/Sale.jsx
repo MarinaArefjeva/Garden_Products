@@ -2,7 +2,9 @@ import React from "react";
 import styles from "./Sale.module.css";
 import Line from "../../../assets/images/categories/Line.svg";
 import Bridge from "../../../assets/images/sale/Bridge.svg";
-
+import flowers from "../../../assets/images/sale/flowers.svg";
+import lock from "../../../assets/images/sale/lock.svg";
+import secateurs from "../../../assets/images/sale/secateurs.svg";
 export default function Sale() {
   return (
     <div className={styles.container}>
@@ -20,21 +22,21 @@ export default function Sale() {
         </div>
 
         <div className={styles.card}>
-          <img className={styles.Bridge} src={Bridge} />
-          <h2>Decorative forged bridge</h2>
-          <p>$500</p>
+          <img className={styles.flowers} src={flowers} />
+          <h2>Flower basket</h2>
+          <p>$100</p>
         </div>
 
         <div className={styles.card}>
-          <img className={styles.Bridge} src={Bridge} />
-          <h2>Decorative forged bridge</h2>
-          <p>$500</p>
+          <img className={styles.lock} src={lock} />
+          <h2>Aquarium lock</h2>
+          <p>$150</p>
         </div>
 
         <div className={styles.card}>
-          <img className={styles.Bridge} src={Bridge} />
-          <h2>Decorative forged bridge</h2>
-          <p>$500</p>
+          <img className={styles.secateurs} src={secateurs} />
+          <h2>Secateurs</h2>
+          <p>$199</p>
         </div>
       </div>
     </div>
