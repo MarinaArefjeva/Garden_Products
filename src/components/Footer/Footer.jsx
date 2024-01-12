@@ -22,13 +22,13 @@ export default function Footer() {
           </div>
           <div className={styles.address}>
             <p className={styles.subheading}>Address</p>
-            <a href="address" className={styles.address}>
+            <a href="store_address" className={styles.store_address}>
               Linkstraße 2, 8 OG, 10 785, Berlin, Deutschland
             </a>
           </div>
           <div className={styles.working_hours}>
             <p className={styles.subheading}>Working Hours</p>
-            <h1 className={styles.text}>24 hours a day</h1>
+            <h1 className={styles.hours}>24 hours a day</h1>
           </div>
         </div>
         <iframe
