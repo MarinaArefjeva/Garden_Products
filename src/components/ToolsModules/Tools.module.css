@@ -25,28 +25,23 @@
     height: 36px;
     padding: 8px, 16px, 8px, 16px;
     border: 1px solid rgba(221, 221, 221, 1);
+    color: rgba(221, 221, 221, 1);
+}
+
+.Line {
+    width: 16px;
+    border: 1px solid rgba(221, 221, 221, 1);
+}
+
+.third_button {
+    width: 205px;
+    height: 36px;
+    padding: 8px, 16px, 8px, 16px;
+    border: 1px solid rgba(221, 221, 221, 1);
     color: black;
 }
 
 .title {
     font-size: 64px;
-    font-weight: 700;
-}
-
-.container_cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    flex-direction: row;
-    gap: 32px;
-}
-
-.card {
-    width: 316px;
-    height: 350px;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
-    padding-bottom: 58px;
+    font-weight: 600;
 }
