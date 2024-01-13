@@ -66,6 +66,7 @@
 }
 
 .map {
+    padding-top: 32px;
     width: 97vw;
     height: 400px;
 }

@@ -45,3 +45,29 @@
     font-size: 64px;
     font-weight: 600;
 }
+
+.price_filter {
+    display: flex;
+    align-items: center;
+    /* width: 309px;
+    height: 36px; */
+    gap: 16px;
+}
+
+.subheading {
+    font-size: 20px;
+    font-weight: 600;
+
+}
+
+.input {
+    width: 112px;
+    height: 36px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.box {
+    width: 36px;
+    height: 36px;
+}

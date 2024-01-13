@@ -18,25 +18,25 @@ export default function Sale() {
         <div className={styles.card}>
           <img className={styles.Bridge} src={Bridge} />
           <h2>Decorative forged bridge</h2>
-          <p>$500</p>
+          <p className={styles.price}>$500</p>
         </div>
 
         <div className={styles.card}>
           <img className={styles.flowers} src={flowers} />
           <h2>Flower basket</h2>
-          <p>$100</p>
+          <p className={styles.price}>$100</p>
         </div>
 
         <div className={styles.card}>
           <img className={styles.lock} src={lock} />
           <h2>Aquarium lock</h2>
-          <p>$150</p>
+          <p className={styles.price}>$150</p>
         </div>
 
         <div className={styles.card}>
           <img className={styles.secateurs} src={secateurs} />
           <h2>Secateurs</h2>
-          <p>$199</p>
+          <p className={styles.price}>$199</p>
         </div>
       </div>
     </div>

@@ -15,6 +15,22 @@ export default function Tools() {
         <button className={styles.third_button}>Tools and equipment</button>
       </div>
       <h1 className={styles.title}>Tools and equipment</h1>
+
+      <div className={styles.filter}>
+        <div className={styles.price_filter}>
+          <h2 className={styles.subheading}>Price</h2>
+          <input className={styles.input} placeholder="from" />
+          <input className={styles.input} placeholder="to" />
+        </div>
+        <div className={styles.items}>
+          <h2 className={styles.subheading}>Discounted items</h2>
+          <input className={styles.box} placeholder />
+        </div>
+        <div className={styles.sorting}>
+          <h2 className={styles.subheading}>Sorted</h2>
+          <input className={styles.input} placeholder="by default" />
+        </div>
+      </div>
     </div>
   );
 }
