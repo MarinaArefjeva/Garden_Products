@@ -1,14 +1,25 @@
 import "./App.css";
-import { Router, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Categories from "./pages/Categories";
-import Equipments from "./pages/Equipments";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/HomeModules/MainPage/Home";
+import Category from "./pages/CategoryModules/Category";
+import Equipments from "./pages/EquipmentsModules/Equipments";
+import Tools from "./pages/ToolsModules/Tools";
+import Layouts from "./pages/Layouts/Layouts";
+// import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
+
 function App() {
   return (
     <div>
-      <Home />
-      <Categories />
-      <Equipments />
+      {/* <ApiProvider> */}
+      <Routes>
+        <Route path="/" element={<Layouts />}>
+          <Route path="" element={<Home />} />
+          <Route path="Categories" element={<Category />} />
+          <Route path="Equipments" element={<Equipments />} />
+          <Route path="Tools" element={<Tools />} />
+        </Route>
+      </Routes>
+      {/* </ApiProvider> */}
     </div>
   );
 }

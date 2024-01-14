@@ -1,0 +1,67 @@
+.price_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 15px;
+}
+
+label,
+.text {
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+}
+
+.price_input {
+    width: 103px;
+    height: 40px;
+    border-radius: 7px;
+    border: none;
+    padding: 0 10px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.48px;
+    box-shadow: 0 0 6px 0px rgb(112, 112, 112);
+}
+
+.price_input::-webkit-outer-spin-button,
+.price_input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.sort_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 15px;
+}
+
+.sort_select {
+    width: 219px;
+    height: 40px;
+    border-radius: 7px;
+    border: none;
+    align-content: center;
+    color: #797979;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.48px;
+    box-shadow: 0 0 6px 0px rgb(112, 112, 112);
+}
+
+label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 15px;
+}
+
+.real_checkbox {
+    width: 0;
+    height: 0;
+    /* opacity: 0; */
+    /* position: absolute; */
+    /* z-index: -1; */
+}
