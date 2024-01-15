@@ -16,7 +16,7 @@ export default function Header() {
           <NavLink to="/Categories" className={styles.link}>
             Categories
           </NavLink>
-          <NavLink to="/All products" className={styles.link}>
+          <NavLink to="/Allproducts" className={styles.link}>
             All products
           </NavLink>
           <NavLink to="/All sales" className={styles.link}>

@@ -6,10 +6,6 @@ import { NavLink } from "react-router-dom";
 import { useGetCategoriesQuery } from "../../../API/Products_api";
 import { API_URL } from "../../../API/api";
 
-// import green_plant from "../../../assets/images/categories/green_plant.svg";
-// import planting from "../../../assets/images/categories/planting.svg";
-// import tools from "../../../assets/images/categories/tools.svg";
-
 const initCategories = [];
 
 export default function Categories() {
@@ -18,7 +14,6 @@ export default function Categories() {
     <div className={styles.container}>
       <div className={styles.container_title}>
         <h1 className={styles.title}>Categories</h1>
-        {/* <hr className={styles.line} /> */}
         <img className={styles.Line} src={Line} />
         <button className={styles.button}>All categories </button>
       </div>
