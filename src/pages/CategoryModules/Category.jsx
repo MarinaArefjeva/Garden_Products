@@ -23,10 +23,8 @@ export default function Category() {
       <div className={styles.container_cards}>
         {allCategories.map((category) => (
           <NavLink to="/Tools" className={styles.card} key={category.id}>
-            <img className={styles.plant} src={API_URL + category.image} />
-            <h2>{category.title}</h2>
-            <p>{category.price}</p>
-            <p>{category.discont_price}</p>
+            <img className={styles.picture} src={API_URL + category.image} />
+            <h2>{category.name}</h2>
           </NavLink>
         ))}
       </div>

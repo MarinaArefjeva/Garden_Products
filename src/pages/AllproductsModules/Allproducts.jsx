@@ -19,7 +19,6 @@ export default function Allproducts() {
         <img className={styles.Line} src={Line} />
 
         <button className={styles.second_button}>All products</button>
-        <img className={styles.Line} src={Line} />
       </div>
       <h1 className={styles.title}>All products</h1>
 
@@ -34,8 +33,8 @@ export default function Allproducts() {
           <div className={styles.card} key={products.id}>
             <img className={styles.plant} src={API_URL + products.image} />
             <h2>{products.name}</h2>
-            <p>{products.price}</p>
-            <p>{products.discont_price}</p>
+            <p>{products.price + "$"}</p>
+            <p>{products.discont_price + "$"}</p>
           </div>
         ))}
       </div>
