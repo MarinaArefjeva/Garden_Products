@@ -16,10 +16,14 @@ export const productsApi = createApi({
     getTools: builder.query({
       query: () => "categories/1",
     }),
+    getAllSales: builder.query({
+      query: () => "products/1",
+    }),
   }),
 });
 export const {
   useGetAllProductsQuery,
   useGetCategoriesQuery,
   useGetToolsQuery,
+  useGetAllSalesQuery,
 } = productsApi;

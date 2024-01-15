@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./Category.module.css";
 import Line from "../../assets/images/categories/Line.svg";
-import plant from "../../assets/images/category/plant.svg";
 import { NavLink } from "react-router-dom";
 import { useGetCategoriesQuery } from "../../API/Products_api";
 import { API_URL } from "../../API/api";

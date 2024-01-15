@@ -10,7 +10,7 @@ import { API_URL } from "../../API/api";
 
 const initTools = [];
 export default function Tools() {
-  const { data: Tools = initTools } = useGetToolsQuery();
+  const { data: tools = initTools } = useGetToolsQuery();
   return (
     <div className={styles.container}>
       <div className={styles.buttons}>
@@ -31,7 +31,7 @@ export default function Tools() {
       </div>
 
       <div className={styles.container_cards}>
-        {Tools.map((tools) => (
+        {tools.map((tools) => (
           <div className={styles.card} key={tools.id}>
             <img className={styles.picture} src={API_URL + tools.image} />
             <h2>{tools.title}</h2>
