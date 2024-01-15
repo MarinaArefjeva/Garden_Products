@@ -25,8 +25,8 @@ export default function Category() {
           <NavLink to="/Tools" className={styles.card} key={category.id}>
             <img className={styles.plant} src={API_URL + category.image} />
             <h2>{category.title}</h2>
-            <p>{productsApi.price}</p>
-            <p>{productsApi.price}</p>
+            <p>{category.price}</p>
+            <p>{category.discont_price}</p>
           </NavLink>
         ))}
       </div>
