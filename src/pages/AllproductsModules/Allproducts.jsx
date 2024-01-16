@@ -30,12 +30,12 @@ export default function Allproducts() {
 
       <div className={styles.container_cards}>
         {allProducts.slice(0, 11).map((products) => (
-          <div className={styles.card} key={products.id}>
-            <img className={styles.plant} src={API_URL + products.image} />
-            <h2>{products.name}</h2>
-            <p>{products.price + "$"}</p>
-            <p>{products.discont_price + "$"}</p>
-          </div>
+          <NavLink to="/" className={styles.card} key={products.id}>
+            <img className={styles.picture} src={API_URL + products.image} />
+            <h2 className={styles.product_name}>{products.title}</h2>
+            <p className={styles.price}>{products.price + "$"}</p>
+            <p className={styles.sale_price}>{products.discont_price + "$"}</p>
+          </NavLink>
         ))}
       </div>
     </div>

@@ -7,10 +7,15 @@ import Sorted_filter from "../FiltrationModules/Sorted_filter";
 import { NavLink } from "react-router-dom";
 import { useGetToolsQuery } from "../../API/Products_api";
 import { API_URL } from "../../API/api";
+import { useLocation } from "react-router";
 
 const initTools = [];
 export default function Tools() {
-  const { data: tools = initTools } = useGetToolsQuery();
+  const location = useLocation();
+  const { state } = location;
+  const { data: products = initTools } = useGetToolsQuery(state.id);
+  const productsArray = products.data;
+  console.log();
   return (
     <div className={styles.container}>
       <div className={styles.buttons}>
@@ -22,7 +27,7 @@ export default function Tools() {
 
         <button className={styles.third_button}>Tools and equipment</button>
       </div>
-      <h1 className={styles.title}>Tools and equipment</h1>
+      <h1 className={styles.title}>{state.title}</h1>
 
       <div className={styles.form_container}>
         <Price_filter />
@@ -31,14 +36,23 @@ export default function Tools() {
       </div>
 
       <div className={styles.container_cards}>
-        {tools.map((tools) => (
-          <div className={styles.card} key={tools.id}>
-            <img className={styles.picture} src={API_URL + tools.image} />
-            <h2>{tools.title}</h2>
-            <p>{tools.price + "$"}</p>
-            <p>{tools.discont_price + "$"}</p>
-          </div>
-        ))}
+        {productsArray
+          ? productsArray.map((product) => (
+              <NavLink
+                to={"/Product"}
+                state={{ id: product.id, title: product.title }}
+                className={styles.card}
+                key={product.id}
+              >
+                <img className={styles.picture} src={API_URL + product.image} />
+                <h2 className={styles.product_name}>{product.title}</h2>
+                <p className={styles.price}>{product.price + "$"}</p>
+                <p className={styles.sale_price}>
+                  {product.discont_price + "$"}
+                </p>
+              </NavLink>
+            ))
+          : ""}
       </div>
     </div>
   );

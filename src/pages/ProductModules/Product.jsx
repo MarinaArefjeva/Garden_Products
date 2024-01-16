@@ -1,16 +1,16 @@
 import React from "react";
-import styles from "./Allsales.module.css";
+import styles from "./Product.module.css";
 import Line from "../../assets/images/tools/Line.svg";
 import Price_filter from "../FiltrationModules/Price_filter";
 import Sorted_filter from "../FiltrationModules/Sorted_filter";
 import { NavLink } from "react-router-dom";
-import { useGetAllSalesQuery } from "../../API/Products_api";
+import { useGetProductQuery } from "../../API/Products_api";
 import { API_URL } from "../../API/api";
 
-const initAllsales = [];
+const initProduct = [];
 
-export default function Allsales() {
-  const { data: allSales = initAllsales } = useGetAllSalesQuery();
+export default function Product() {
+  const { data: products = initProduct } = useGetProductQuery();
   return (
     <div className={styles.container}>
       <div className={styles.button}>
@@ -26,13 +26,13 @@ export default function Allsales() {
       </div>
 
       <div className={styles.container_cards}>
-        {allSales.map((sales) => (
-          <div className={styles.card} key={products.id}>
-            <img className={styles.picture} src={API_URL + sales.image} />
-            <h2>{product.title}</h2>
-            <p>{products.price + "$"}</p>
-            <p>{products.discont_price + "$"}</p>
-          </div>
+        {products.map((product) => (
+          <NavLink to="/" className={styles.card} key={product.id}>
+            <img className={styles.picture} src={API_URL + product.image} />
+            <h2 className={styles.product_name}>{product.title}</h2>
+            <p className={styles.price}>{product.price + "$"}</p>
+            <p className={styles.sale_price}>{product.discont_price + "$"}</p>
+          </NavLink>
         ))}
       </div>
     </div>

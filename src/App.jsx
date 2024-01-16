@@ -3,9 +3,9 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/HomeModules/MainPage/Home";
 import Category from "./pages/CategoryModules/Category";
 import Allproducts from "./pages/AllproductsModules/Allproducts";
-import Allsales from "./pages/AllsalesModules/Allsales";
-// import Equipments from "./pages/EquipmentsModules/Equipments";
+import Product from "./pages/ProductModules/Product";
 import Tools from "./pages/ToolsModules/Tools";
+import Item from "./pages/ItemModules/Item";
 import Layouts from "./pages/Layouts/Layouts";
 // import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 
@@ -18,9 +18,9 @@ function App() {
           <Route path="" element={<Home />} />
           <Route path="Categories" element={<Category />} />
           <Route path="Allproducts" element={<Allproducts />} />
-          <Route path="Allsales" element={<Allsales />} />
-          {/* <Route path="Equipments" element={<Equipments />} /> */}
-          <Route path="Toolst" element={<Tools />} />
+          <Route path="Product" element={<Product />} />
+          <Route path="Tools" element={<Tools />} />
+          <Route path="Item" element={<Item />} />
         </Route>
       </Routes>
       {/* </ApiProvider> */}
