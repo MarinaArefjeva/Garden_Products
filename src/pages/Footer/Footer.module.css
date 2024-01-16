@@ -2,6 +2,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 40px;
 }
 
 .contacts {
@@ -14,6 +15,7 @@ footer {
 .title {
     font-size: 64px;
     font-weight: 700;
+    align-items: center;
 }
 
 .phone {

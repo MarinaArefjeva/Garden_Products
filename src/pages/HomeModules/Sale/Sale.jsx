@@ -11,7 +11,7 @@ export default function Sale() {
       <div className={styles.container_title}>
         <h1>Sale</h1>
         <img className={styles.Line} src={Line} />
-        <button className={styles.button}>All categories </button>
+        <button className={styles.button}>All sales </button>
       </div>
 
       <div className={styles.container_cards}>
