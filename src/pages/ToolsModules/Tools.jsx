@@ -13,7 +13,7 @@ const initTools = [];
 export default function Tools() {
   const location = useLocation();
   const { state } = location;
-  const { data: products = initTools } = useGetToolsQuery(state.id);
+  const { data: products = initTools } = useGetToolsQuery();
   const productsArray = products.data;
   console.log();
   return (
@@ -27,7 +27,7 @@ export default function Tools() {
 
         <button className={styles.third_button}>Tools and equipment</button>
       </div>
-      <h1 className={styles.title}>{state.title}</h1>
+      <h1 className={styles.title}>{}</h1>
 
       <div className={styles.form_container}>
         <Price_filter />
