@@ -19,7 +19,7 @@ export default function Header() {
           <NavLink to="/Allproducts" className={styles.link}>
             All products
           </NavLink>
-          <NavLink to="/All sales" className={styles.link}>
+          <NavLink to="/Allsales" className={styles.link}>
             All sales
           </NavLink>
         </ul>

@@ -39,7 +39,12 @@ export default function Allproducts() {
 
       <div className={styles.container_cards}>
         {allproducts.map((products) => (
-          <NavLink to="/" className={styles.card} key={products.id}>
+          <NavLink
+            to="/Item"
+            state={{ id: products.id, title: products.title }}
+            className={styles.card}
+            key={products.id}
+          >
             <img className={styles.picture} src={API_URL + products.image} />
             <h2 className={styles.product_name}>{products.title}</h2>
             <p className={styles.price}>{products.price + "$"}</p>

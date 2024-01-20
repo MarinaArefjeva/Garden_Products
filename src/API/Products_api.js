@@ -1,6 +1,4 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-// import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-// import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { API_URL } from "./api";
 
 export const productsApi = createApi({
@@ -16,11 +14,29 @@ export const productsApi = createApi({
     getTools: builder.query({
       query: (id) => `categories/${id}`,
     }),
+
     getProduct: builder.query({
-      query: () => "products/1",
+      query: (id) => `products/${id}`,
     }),
+
     getItem: builder.query({
       query: () => "products/2",
+    }),
+
+    sendDiscount: builder.mutation({
+      query: (body) => ({
+        url: "sale/send",
+        method: "POST",
+        body,
+      }),
+    }),
+
+    sendProduct: builder.mutation({
+      query: (body) => ({
+        url: "order/send ",
+        method: "POST",
+        body,
+      }),
     }),
   }),
 });

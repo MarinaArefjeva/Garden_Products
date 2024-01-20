@@ -8,11 +8,7 @@ import { useGetCategoriesQuery } from "../../API/Products_api";
 
 const initCategories = [];
 
-export default function Category({ setfirst }) {
-  // const { category } = useSelector(({ category }) => category);
-  const location = useLocation();
-  const { state } = location;
-  console.log(location);
+export default function Category() {
   const { data: category = initCategories } = useGetCategoriesQuery();
 
   return (
@@ -28,7 +24,6 @@ export default function Category({ setfirst }) {
       <div className={styles.container_cards}>
         {category.map((category) => (
           <NavLink
-            // onClick={setfirst(category.id)}
             state={{ id: category.id, title: category.title }}
             to="/Tools"
             className={styles.card}

@@ -1,40 +1,50 @@
-// import React from "react";
-// import styles from "./Product.module.css";
-// import Line from "../../assets/images/tools/Line.svg";
-// import Price_filter from "../FiltrationModules/Price_filter";
-// import Sorted_filter from "../FiltrationModules/Sorted_filter";
-// import { NavLink } from "react-router-dom";
-// // import { useGetProductQuery } from "../../API/Products_api";
-// import { API_URL } from "../../API/api";
+import React, { useMemo } from "react";
+import styles from "./Allsales.module.css";
+import Line from "../../assets/images/tools/Line.svg";
+import Price_filter from "../../components/FiltrationModules/Price_filter";
+import Sorted_filter from "../../components/FiltrationModules/Sorted_filter";
+import { NavLink } from "react-router-dom";
+import { useGetAllProductsQuery } from "../../API/Products_api";
+import { API_URL } from "../../API/api";
 
-// const initProduct = [];
+const initProduct = [];
 
-// export default function Product() {
-//   // const { data: products = initProduct } = useGetProductQuery();
-//   return (
-//     <div className={styles.container}>
-//       <div className={styles.button}>
-//         <button className={styles.first_button}>Main page</button>
-//         <img className={styles.Line} src={Line} />
-//         <button className={styles.second_button}>All sales</button>
-//       </div>
-//       <h1 className={styles.title}>All sales</h1>
+export default function Allsales() {
+  const { data: products = initProduct } = useGetAllProductsQuery();
 
-//       <div className={styles.form_container}>
-//         <Price_filter />
-//         <Sorted_filter />
-//       </div>
+  const productsAllsales = useMemo(() => {
+    return products.filter((product) => product.discont_price);
+  }, [products]);
 
-//       <div className={styles.container_cards}>
-//         {allsales.map((product) => (
-//           <NavLink to="/" className={styles.card} key={product.id}>
-//             <img className={styles.picture} src={API_URL + product.image} />
-//             <h2 className={styles.product_name}>{product.title}</h2>
-//             <p className={styles.price}>{product.price + "$"}</p>
-//             <p className={styles.sale_price}>{product.discont_price + "$"}</p>
-//           </NavLink>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
+  return (
+    <div className={styles.container}>
+      <div className={styles.button}>
+        <button className={styles.first_button}>Main page</button>
+        <img className={styles.Line} src={Line} />
+        <button className={styles.second_button}>All sales</button>
+      </div>
+      <h1 className={styles.title}>All sales</h1>
+
+      <div className={styles.form_container}>
+        <Price_filter />
+        <Sorted_filter />
+      </div>
+
+      <div className={styles.container_cards}>
+        {productsAllsales.map((product) => (
+          <NavLink
+            to="/Item"
+            state={{ id: product.id, title: product.title }}
+            className={styles.card}
+            key={product.id}
+          >
+            <img className={styles.picture} src={API_URL + product.image} />
+            <h2 className={styles.product_name}>{product.title}</h2>
+            <p className={styles.price}>{product.price + "$"}</p>
+            <p className={styles.sale_price}>{product.discont_price + "$"}</p>
+          </NavLink>
+        ))}
+      </div>
+    </div>
+  );
+}
