@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <Discount />
       <div className={styles.home_container}>
-        <Categories />
+        {/* <Categories /> */}
         <OrderForm />
         <Sale />
       </div>

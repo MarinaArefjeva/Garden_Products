@@ -1,0 +1,40 @@
+.container {
+    padding: 40px;
+}
+
+.container_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-size: 64px;
+    font-weight: 700;
+}
+
+.Line {
+    width: 832px;
+    color: rgba(221, 221, 221, 1);
+}
+
+.button {
+    width: 170px;
+    height: 36px;
+    padding: 8px, 16px, 8px, 16px;
+    border: 1px solid rgba(221, 221, 221, 1);
+    color: rgba(221, 221, 221, 1);
+}
+
+.container_form {
+    width: 548px;
+    height: 582px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+/* .input_order_form {
+    w58
+} */

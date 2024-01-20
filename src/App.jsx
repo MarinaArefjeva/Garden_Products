@@ -3,27 +3,36 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/HomeModules/MainPage/Home";
 import Category from "./pages/CategoryModules/Category";
 import Allproducts from "./pages/AllproductsModules/Allproducts";
-import Product from "./pages/ProductModules/Product";
+import Allsales from "./pages/AllsalesModules/Allsales";
 import Tools from "./pages/ToolsModules/Tools";
 import Item from "./pages/ItemModules/Item";
+import Cart from "./pages/CartModules/Cart";
 import Layouts from "./pages/Layouts/Layouts";
-// import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { getCategory } from "./storage/Slice/categorySlice";
 
 function App() {
+  const [first, setfirst] = useState("");
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(getCategory());
+  // }, [dispatch]);
+  // const { category } = useSelector(({ category }) => category);
+  // console.log(category);
   return (
     <div>
-      {/* <ApiProvider> */}
       <Routes>
         <Route path="/" element={<Layouts />}>
           <Route path="" element={<Home />} />
-          <Route path="Categories" element={<Category />} />
+          <Route path="Categories" element={<Category setfirst={setfirst} />} />
           <Route path="Allproducts" element={<Allproducts />} />
-          <Route path="Product" element={<Product />} />
-          <Route path="Tools" element={<Tools />} />
+          <Route path="Allsales" element={<Allsales />} />
+          <Route path="Tools" element={<Tools first={first} />} />
+          <Route path="Cart" element={<Cart />} />
           <Route path="Item" element={<Item />} />
         </Route>
       </Routes>
-      {/* </ApiProvider> */}
     </div>
   );
 }

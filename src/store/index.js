@@ -1,5 +1,5 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import basketSlice from "./slices/BasketSlices";
+import cartSlice from "./slices/CartSlices";
 import productsSlice from "./slices/ProductsSlices";
 import storage from "redux-persist/lib/storage";
 import {
@@ -15,7 +15,7 @@ import {
 import { productsApi } from "../API/Products_api";
 
 const rootReducer = combineReducers({
-  basketProducts: basketSlice,
+  basketProducts: cartSlice,
   products: productsSlice,
   [productsApi.reducerPath]: productsApi.reducer,
 });

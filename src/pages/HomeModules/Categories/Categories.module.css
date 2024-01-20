@@ -24,19 +24,23 @@
 
 .container_cards {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    flex-direction: row;
+    gap: 32px;
 }
 
 .card {
     width: 316px;
     height: 350px;
     display: flex;
+
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
 }
 
-.plant {
+.picture {
     width: 316px;
     height: 350px;
 }
