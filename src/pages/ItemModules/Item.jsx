@@ -4,6 +4,9 @@ import Line from "../../assets/images/tools/Line.svg";
 import { useGetProductQuery } from "../../API/Products_api";
 import { useLocation } from "react-router-dom";
 import { API_URL } from "../../API/api";
+import minus from "../../assets/images/item/minus.svg";
+import number from "../../assets/images/item/number.svg";
+import plus from "../../assets/images/item/plus.svg";
 
 const initProducts = [];
 
@@ -27,13 +30,28 @@ export default function Item() {
       </div>
 
       {cart.map((product) => (
-        <div>
-          <h1 className={styles.title}>{product.title}</h1>
+        <div className={styles.item}>
+          <img className={styles.picture} src={API_URL + product.image} />
           <div>
-            <img src={API_URL + product.image} />
-            <div>
-              <p>{product.price}</p>
-              <p>{product.dicont_price}</p>
+            <h1 className={styles.title}>{product.title}</h1>
+            <p className={styles.full_price}>{product.price + "$"}</p>
+            <p className={styles.sale_price}>{product.dicont_price + "$"}</p>
+            <div className={styles.buttons}>
+              <button className={styles.minuss_button}>
+                <img className={styles.minus} src={minus} />
+              </button>
+              <img className={styles.quantity} src={number} />
+
+              <button className={styles.plus_button}>
+                <img className={styles.plus} src={plus} />
+              </button>
+              <button className={styles.cart_button}>Add to cart</button>
+            </div>
+
+            <div className={styles.about_product}>
+              <h2 className={styles.subtitle}>Description</h2>
+              <p className={styles.description}>{product.description}</p>
+              <p className={styles.text}>Read more</p>
             </div>
           </div>
         </div>

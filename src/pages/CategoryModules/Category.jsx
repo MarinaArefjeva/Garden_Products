@@ -3,7 +3,6 @@ import styles from "./Category.module.css";
 import Line from "../../assets/images/categories/Line.svg";
 import { NavLink, useLocation } from "react-router-dom";
 import { API_URL } from "../../API/api";
-import { useSelector } from "react-redux";
 import { useGetCategoriesQuery } from "../../API/Products_api";
 
 const initCategories = [];
