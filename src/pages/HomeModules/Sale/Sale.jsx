@@ -15,26 +15,38 @@ export default function Sale() {
       <div className={styles.container_cards}>
         <div className={styles.card}>
           <img className={styles.Bridge} src={Bridge} />
-          <h2 className={styles.title}></h2>
-          <p className={styles.price}></p>
+          <div className={styles.text}>
+            <h2 className={styles.title}>Decorative forged bridge</h2>
+            <span className={styles.sale_price}>$500</span>
+            <span className={styles.price}>$1000</span>
+          </div>
         </div>
 
         <div className={styles.card}>
           <img className={styles.Bridge} src={Bridge} />
-          <h2 className={styles.title}></h2>
-          <p className={styles.price}></p>
+          <div className={styles.text}>
+            <h2 className={styles.title}>Decorative forged bridge</h2>
+            <span className={styles.sale_price}>$500</span>
+            <span className={styles.price}>$1000</span>
+          </div>
         </div>
 
         <div className={styles.card}>
           <img className={styles.Bridge} src={Bridge} />
-          <h2 className={styles.title}></h2>
-          <p className={styles.price}></p>
+          <div className={styles.text}>
+            <h2 className={styles.title}>Decorative forged bridge</h2>
+            <span className={styles.sale_price}>$500</span>
+            <span className={styles.price}>$1000</span>
+          </div>
         </div>
 
         <div className={styles.card}>
           <img className={styles.Bridge} src={Bridge} />
-          <h2 className={styles.title}></h2>
-          <p className={styles.price}></p>
+          <div className={styles.text}>
+            <h2 className={styles.title}>Decorative forged bridge</h2>
+            <span className={styles.sale_price}>$500</span>
+            <span className={styles.price}>$1000</span>
+          </div>
         </div>
       </div>
     </div>

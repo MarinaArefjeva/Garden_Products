@@ -46,11 +46,13 @@ export default function Allproducts() {
             key={products.id}
           >
             <img className={styles.picture} src={API_URL + products.image} />
-            <h2 className={styles.product_name}>{products.title}</h2>
-            <span className={styles.price}>{products.price + "$"}</span>
-            <span className={styles.sale_price}>
-              {products.discont_price + "$"}
-            </span>
+            <div className={styles.text}>
+              <h2 className={styles.product_title}>{products.title}</h2>
+              <span className={styles.sale_price}>
+                {products.discont_price + "$"}
+                <span className={styles.price}>{products.price + "$"}</span>
+              </span>
+            </div>
           </NavLink>
         ))}
       </div>
