@@ -7,6 +7,7 @@ import Allsales from "./pages/AllsalesModules/Allsales";
 import Tools from "./pages/ToolsModules/Tools";
 import Item from "./pages/ItemModules/Item";
 import Cart from "./pages/CartModules/Cart";
+import NotFound from "./pages/NotFoundModules/NotFound";
 import Layouts from "./pages/Layouts/Layouts";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="Tools" element={<Tools />} />
           <Route path="Cart" element={<Cart />} />
           <Route path="Item" element={<Item />} />
+          <Route path="NotFound" element={<NotFound />} />
         </Route>
       </Routes>
     </div>
