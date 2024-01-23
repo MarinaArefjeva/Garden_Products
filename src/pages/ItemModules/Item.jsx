@@ -7,7 +7,6 @@ import { API_URL } from "../../API/api";
 import minus from "../../assets/images/item/minus.svg";
 import number from "../../assets/images/item/number.svg";
 import plus from "../../assets/images/item/plus.svg";
-
 const initProducts = [];
 
 export default function Item() {
@@ -34,8 +33,10 @@ export default function Item() {
           <img className={styles.picture} src={API_URL + product.image} />
           <div>
             <h1 className={styles.title}>{product.title}</h1>
-            <p className={styles.full_price}>{product.price + "$"}</p>
-            <p className={styles.sale_price}>{product.dicont_price + "$"}</p>
+            <span className={styles.sale_price}>{product.price + "$"}</span>
+            <span className={styles.full_price}>
+              {product.dicont_price + "$"}
+            </span>
             <div className={styles.buttons}>
               <button className={styles.minuss_button}>
                 <img className={styles.minus} src={minus} />

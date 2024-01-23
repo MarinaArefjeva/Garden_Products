@@ -37,6 +37,7 @@ footer {
     font-size: 40px;
     font-weight: 600;
     color: black;
+    text-decoration: none
 }
 
 .socials {
@@ -62,6 +63,7 @@ footer {
 .store_address {
     font-size: 40px;
     font-weight: 600;
+    text-decoration: none;
     color: black;
 }
 

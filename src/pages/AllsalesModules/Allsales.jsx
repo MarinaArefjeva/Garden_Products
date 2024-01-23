@@ -40,8 +40,10 @@ export default function Allsales() {
           >
             <img className={styles.picture} src={API_URL + product.image} />
             <h2 className={styles.product_name}>{product.title}</h2>
-            <p className={styles.price}>{product.price + "$"}</p>
-            <p className={styles.sale_price}>{product.discont_price + "$"}</p>
+            <span className={styles.price}>{product.price + "$"}</span>
+            <span className={styles.sale_price}>
+              {product.discont_price + "$"}
+            </span>
           </NavLink>
         ))}
       </div>
