@@ -6,6 +6,7 @@ import Sorted_filter from "../../components/FiltrationModules/Sorted_filter";
 import { NavLink } from "react-router-dom";
 import { useGetAllProductsQuery } from "../../API/Products_api";
 import { API_URL } from "../../API/api";
+import MainPage_button from "../../components/Buttons/MainPage_button";
 
 const initProduct = [];
 
@@ -18,11 +19,9 @@ export default function Allsales() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.button}>
-        <button className={styles.first_button}>Main page</button>
-        <img className={styles.Line} src={Line} />
-        <button className={styles.second_button}>All sales</button>
-      </div>
+      <MainPage_button />
+      <button className={styles.second_button}>All sales</button>
+
       <h1 className={styles.title}>All sales</h1>
 
       <div className={styles.form_container}>

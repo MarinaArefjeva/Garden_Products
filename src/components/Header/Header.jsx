@@ -8,7 +8,9 @@ export default function Header() {
   return (
     <>
       <header>
-        <img className={styles.logo} src={logo} />
+        <NavLink to="/MainPage">
+          <img className={styles.logo} src={logo} />
+        </NavLink>
         <ul className={styles.nav}>
           <NavLink to="/" className={styles.link}>
             Main Page
@@ -23,7 +25,7 @@ export default function Header() {
             All sales
           </NavLink>
         </ul>
-        <NavLink to="/basket">
+        <NavLink to="/Cart">
           <img className={styles.basket} src={basket} />
         </NavLink>
       </header>

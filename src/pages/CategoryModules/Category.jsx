@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./Category.module.css";
-import Line from "../../assets/images/categories/Line.svg";
 import { NavLink, useLocation } from "react-router-dom";
 import { API_URL } from "../../API/api";
 import { useGetCategoriesQuery } from "../../API/Products_api";
+import MainPage_button from "../../components/Buttons/MainPage_button";
+import Categories_button from "../../components/Buttons/Categories_button";
 
 const initCategories = [];
 
@@ -12,14 +13,10 @@ export default function Category() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.buttons}>
-        <button className={styles.first_button}>Main page</button>
-        <img className={styles.Line} src={Line} />
+      <MainPage_button />
+      <Categories_button />
 
-        <button className={styles.second_button}>Categories</button>
-      </div>
       <h1 className={styles.title}>Categories</h1>
-
       <div className={styles.container_cards}>
         {category.map((category) => (
           <NavLink

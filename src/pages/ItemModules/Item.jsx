@@ -4,9 +4,11 @@ import Line from "../../assets/images/tools/Line.svg";
 import { useGetProductQuery } from "../../API/Products_api";
 import { useLocation } from "react-router-dom";
 import { API_URL } from "../../API/api";
-import minus from "../../assets/images/item/minus.svg";
-import number from "../../assets/images/item/number.svg";
-import plus from "../../assets/images/item/plus.svg";
+import CartButton from "../../components/CartButton/CartButton";
+import MainPage_button from "../../components/Buttons/MainPage_button";
+import Categories_button from "../../components/Buttons/Categories_button";
+import Tools_button from "../../components/Buttons/Tools_button";
+
 const initProducts = [];
 
 export default function Item() {
@@ -15,18 +17,10 @@ export default function Item() {
   const { data: cart = initProducts } = useGetProductQuery(state.id);
   return (
     <div className={styles.container}>
-      <div className={styles.buttons}>
-        <button className={styles.first_button}>Main page</button>
-        <img className={styles.Line} src={Line} />
-
-        <button className={styles.second_button}>Categories</button>
-        <img className={styles.Line} src={Line} />
-
-        <button className={styles.third_button}>Tools and equipment</button>
-        <img className={styles.Line} src={Line} />
-
-        <button className={styles.fourth_button}>Secateurs</button>
-      </div>
+      <MainPage_button />
+      <Categories_button />
+      <img className={styles.Line} src={Line} />
+      <Tools_button />
 
       {cart.map((product) => (
         <div className={styles.item}>
@@ -37,16 +31,9 @@ export default function Item() {
             <span className={styles.full_price}>
               {product.dicont_price + "$"}
             </span>
-            <div className={styles.buttons}>
-              <button className={styles.minuss_button}>
-                <img className={styles.minus} src={minus} />
-              </button>
-              <img className={styles.quantity} src={number} />
 
-              <button className={styles.plus_button}>
-                <img className={styles.plus} src={plus} />
-              </button>
-              <button className={styles.cart_button}>Add to cart</button>
+            <div className={styles.buttons}>
+              <CartButton />
             </div>
 
             <div className={styles.about_product}>

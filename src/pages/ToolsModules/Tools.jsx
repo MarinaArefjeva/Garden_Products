@@ -7,6 +7,9 @@ import Sorted_filter from "../../components/FiltrationModules/Sorted_filter";
 import { NavLink, useLocation } from "react-router-dom";
 import { API_URL } from "../../API/api";
 import { useGetToolsQuery } from "../../API/Products_api";
+import MainPage_button from "../../components/Buttons/MainPage_button";
+import Categories_button from "../../components/Buttons/Categories_button";
+import Tools_button from "../../components/Buttons/Tools_button";
 
 const initAllproducts = [];
 
@@ -18,15 +21,11 @@ export default function Tools() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.buttons}>
-        <button className={styles.first_button}>Main page</button>
-        <img className={styles.Line} src={Line} />
+      <MainPage_button />
+      <Categories_button />
+      <img className={styles.Line} src={Line} />
+      <Tools_button />
 
-        <button className={styles.second_button}>Categories</button>
-        <img className={styles.Line} src={Line} />
-
-        <button className={styles.third_button}>Tools and equipment</button>
-      </div>
       <h1 className={styles.title}>{}</h1>
 
       <div className={styles.form_container}>
