@@ -4,8 +4,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { API_URL } from "../../API/api";
 import { useGetCategoriesQuery } from "../../API/Products_api";
 import MainPage_button from "../../components/Buttons/MainPage_button";
-import Categories_button from "../../components/Buttons/Categories_button";
-
+import CustomButton from "../../components/Buttons/Button";
 const initCategories = [];
 
 export default function Category() {
@@ -13,8 +12,10 @@ export default function Category() {
 
   return (
     <div className={styles.container}>
-      <MainPage_button />
-      <Categories_button />
+      <div>
+        <MainPage_button />
+        <CustomButton title="Categories" className={styles.second_button} />
+      </div>
 
       <h1 className={styles.title}>Categories</h1>
       <div className={styles.container_cards}>

@@ -9,10 +9,10 @@
     height: 36px;
     padding: 8px, 16px, 8px, 16px;
     border: 1px solid rgba(221, 221, 221, 1);
-    color: rgba(221, 221, 221, 1);
+    color: rgba(139, 139, 139, 1);
 }
 
-.Line {
+.Line_img {
     width: 16px;
     border: 1px solid rgba(221, 221, 221, 1);
 }
@@ -24,6 +24,14 @@
     border: 1px solid rgba(221, 221, 221, 1);
     color: black;
 }
+
+.custom-button {
+    /* Common styles for the button */
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 
 .third_button {
     width: 205px;

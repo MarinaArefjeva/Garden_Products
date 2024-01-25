@@ -6,21 +6,27 @@ import { useLocation } from "react-router-dom";
 import { API_URL } from "../../API/api";
 import CartButton from "../../components/CartButton/CartButton";
 import MainPage_button from "../../components/Buttons/MainPage_button";
-import Categories_button from "../../components/Buttons/Categories_button";
-import Tools_button from "../../components/Buttons/Tools_button";
-
+import CustomButton from "../../components/Buttons/Button";
 const initProducts = [];
 
 export default function Item() {
   const location = useLocation();
   const { state } = location;
   const { data: cart = initProducts } = useGetProductQuery(state.id);
+
   return (
     <div className={styles.container}>
-      <MainPage_button />
-      <Categories_button />
-      <img className={styles.Line} src={Line} />
-      <Tools_button />
+      <div>
+        <MainPage_button />
+        <CustomButton title="Categories" className={styles.second_button} />
+        <img className={styles.Line} src={Line} />
+        <CustomButton
+          title="Tools and equipment"
+          className={styles.third_button}
+        />
+        <img className={styles.Line} src={Line} />
+        <CustomButton title="Annuals" className={styles.fourth_button} />
+      </div>
 
       {cart.map((product) => (
         <div className={styles.item}>

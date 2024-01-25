@@ -7,6 +7,7 @@ import Sorted_filter from "../../components/FiltrationModules/Sorted_filter";
 import { useGetAllProductsQuery } from "../../API/Products_api";
 import ProductCart from "../../components/ProductCart/ProductCart";
 import MainPage_button from "../../components/Buttons/MainPage_button";
+import CustomButton from "../../components/Buttons/Button";
 
 const initAllproducts = [];
 
@@ -15,8 +16,11 @@ export default function Allproducts() {
 
   return (
     <div className={styles.container}>
-      <MainPage_button />
-      <button className={styles.second_button}>All products</button>
+      <div>
+        <MainPage_button />
+        <CustomButton title="All products" className={styles.second_button} />
+        {/* <button className={styles.second_button}>All products</button> */}
+      </div>
 
       <h1 className={styles.title}>All products</h1>
 

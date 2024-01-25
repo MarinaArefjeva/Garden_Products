@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Tools.module.css";
-import Line from "../../assets/images/tools/Line.svg";
+import Line from "../../components/Buttons/Line";
 import Price_filter from "../../components/FiltrationModules/Price_filter";
 import Discounted_filter from "../../components/FiltrationModules/Discounted_filter";
 import Sorted_filter from "../../components/FiltrationModules/Sorted_filter";
@@ -8,9 +8,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { API_URL } from "../../API/api";
 import { useGetToolsQuery } from "../../API/Products_api";
 import MainPage_button from "../../components/Buttons/MainPage_button";
-import Categories_button from "../../components/Buttons/Categories_button";
-import Tools_button from "../../components/Buttons/Tools_button";
-
+import CustomButton from "../../components/Buttons/Button";
 const initAllproducts = [];
 
 export default function Tools() {
@@ -21,10 +19,15 @@ export default function Tools() {
 
   return (
     <div className={styles.container}>
-      <MainPage_button />
-      <Categories_button />
-      <img className={styles.Line} src={Line} />
-      <Tools_button />
+      <div>
+        <MainPage_button />
+        <CustomButton title="Categories" className={styles.second_button} />
+        <Line />
+        <CustomButton
+          title="Tools and equipment"
+          className={styles.third_button}
+        />
+      </div>
 
       <h1 className={styles.title}>{}</h1>
 
