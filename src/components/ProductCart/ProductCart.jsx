@@ -15,10 +15,10 @@ export default function ProductCart({ product }) {
       <div className={styles.text}>
         <p className={styles.product_title}>{product.title}</p>
         {product.discont_price ? (
-          <>
+          <div className={styles.prices}>
             <p className={styles.sale_price}>{product.discont_price + "$"}</p>
             <p className={styles.price}>{product.price + "$"}</p>
-          </>
+          </div>
         ) : (
           <p className={styles.sale_price}>{product.price + "$"}</p>
         )}

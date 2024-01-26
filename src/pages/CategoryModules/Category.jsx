@@ -5,6 +5,7 @@ import { API_URL } from "../../API/api";
 import { useGetCategoriesQuery } from "../../API/Products_api";
 import MainPage_button from "../../components/Buttons/MainPage_button";
 import CustomButton from "../../components/Buttons/Button";
+
 const initCategories = [];
 
 export default function Category() {

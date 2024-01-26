@@ -22,7 +22,7 @@ label,
     font-size: 16px;
     font-weight: 500;
     letter-spacing: 0.48px;
-    box-shadow: 0 0 6px 0px rgb(112, 112, 112);
+    box-shadow: 0 0 1px 0px rgb(112, 112, 112);
 }
 
 .price_input::-webkit-outer-spin-button,
@@ -48,7 +48,7 @@ label,
     font-size: 16px;
     font-weight: 500;
     letter-spacing: 0.48px;
-    box-shadow: 0 0 6px 0px rgb(112, 112, 112);
+    box-shadow: 0 0 1px 0px rgb(112, 112, 112);
 }
 
 label {

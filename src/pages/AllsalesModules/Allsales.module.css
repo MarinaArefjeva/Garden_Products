@@ -26,9 +26,10 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 32px;
 }
 
-.card {
+/* .card {
     width: 316px;
     height: 350px;
     display: flex;
@@ -66,4 +67,4 @@
     text-decoration: line-through;
     color: rgba(221, 221, 221, 1);
 
-}
+} */

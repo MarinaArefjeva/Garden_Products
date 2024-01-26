@@ -16,27 +16,3 @@
     width: 16px;
     border: 1px solid rgba(221, 221, 221, 1);
 }
-
-.second_button {
-    width: 120px;
-    height: 36px;
-    padding: 8px, 16px, 8px, 16px;
-    border: 1px solid rgba(221, 221, 221, 1);
-    color: black;
-}
-
-.custom-button {
-    /* Common styles for the button */
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-
-.third_button {
-    width: 205px;
-    height: 36px;
-    padding: 8px, 16px, 8px, 16px;
-    border: 1px solid rgba(221, 221, 221, 1);
-    color: black;
-}

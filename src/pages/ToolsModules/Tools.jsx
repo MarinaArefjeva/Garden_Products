@@ -4,9 +4,9 @@ import Line from "../../components/Buttons/Line";
 import Price_filter from "../../components/FiltrationModules/Price_filter";
 import Discounted_filter from "../../components/FiltrationModules/Discounted_filter";
 import Sorted_filter from "../../components/FiltrationModules/Sorted_filter";
-import { NavLink, useLocation } from "react-router-dom";
-import { API_URL } from "../../API/api";
+import { useLocation } from "react-router-dom";
 import { useGetToolsQuery } from "../../API/Products_api";
+import ProductCart from "../../components/ProductCart/ProductCart";
 import MainPage_button from "../../components/Buttons/MainPage_button";
 import CustomButton from "../../components/Buttons/Button";
 const initAllproducts = [];
@@ -37,23 +37,7 @@ export default function Tools() {
         <Sorted_filter />
       </div>
       <div className={styles.container_cards}>
-        {data
-          ? data.map((product) => (
-              <NavLink
-                to={"/Item"}
-                state={{ id: product.id, title: product.title }}
-                className={styles.card}
-                key={product.id}
-              >
-                <img className={styles.picture} src={API_URL + product.image} />
-                <h2 className={styles.product_name}>{product.title}</h2>
-                <p className={styles.price}>{product.price + "$"}</p>
-                <p className={styles.sale_price}>
-                  {product.discont_price + "$"}
-                </p>
-              </NavLink>
-            ))
-          : ""}
+        {data ? data.map((product) => <ProductCart product={product} />) : ""}
       </div>
     </div>
   );

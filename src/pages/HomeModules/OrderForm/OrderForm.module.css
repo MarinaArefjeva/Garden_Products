@@ -24,17 +24,19 @@
 .input_order_form {
     width: 516px;
     height: 58px;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
     background: linear-gradient(261deg, #0B710B 32.63%, #393 98.96%);
     font-size: 20px;
     font-weight: 500;
-    color: rgba(255, 255, 255, 1);
-    border: 1px solid rgba(255, 255, 255, 1);
+    color: var(--txt-white, #FFF);
+    border: 1px solid white;
+    border-radius: var(--radius-small, 6px);
 }
 
 .button {
     width: 516px;
     height: 58px;
+    margin-top: 16px;
     font-size: 20px;
     font-weight: 600;
 }

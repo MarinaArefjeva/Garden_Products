@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import styles from "./Allproducts.module.css";
-import Line from "../../assets/images/tools/Line.svg";
 import Price_filter from "../../components/FiltrationModules/Price_filter";
 import Discounted_filter from "../../components/FiltrationModules/Discounted_filter";
 import Sorted_filter from "../../components/FiltrationModules/Sorted_filter";
@@ -19,7 +18,6 @@ export default function Allproducts() {
       <div>
         <MainPage_button />
         <CustomButton title="All products" className={styles.second_button} />
-        {/* <button className={styles.second_button}>All products</button> */}
       </div>
 
       <h1 className={styles.title}>All products</h1>

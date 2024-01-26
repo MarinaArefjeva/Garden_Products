@@ -33,9 +33,10 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 32px;
 }
 
-.card {
+/* .card {
     width: 316px;
     height: 350px;
     display: flex;
@@ -63,4 +64,4 @@
     font-size: 20px;
     font-weight: 500;
     text-decoration: line-through;
-}
+} */

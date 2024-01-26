@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../ItemModules/Item.module.css";
-import Line from "../../assets/images/tools/Line.svg";
+import Line from "../../components/Buttons/Line";
 import { useGetProductQuery } from "../../API/Products_api";
 import { useLocation } from "react-router-dom";
 import { API_URL } from "../../API/api";
@@ -19,12 +19,12 @@ export default function Item() {
       <div>
         <MainPage_button />
         <CustomButton title="Categories" className={styles.second_button} />
-        <img className={styles.Line} src={Line} />
+        <Line />
         <CustomButton
           title="Tools and equipment"
           className={styles.third_button}
         />
-        <img className={styles.Line} src={Line} />
+        <Line />
         <CustomButton title="Annuals" className={styles.fourth_button} />
       </div>
 
