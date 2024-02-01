@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./Category.module.css";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { API_URL } from "../../API/api";
 import { useGetCategoriesQuery } from "../../API/Products_api";
-import MainPage_button from "../../components/Buttons/MainPage_button";
-import CustomButton from "../../components/Buttons/Button";
+import CustomButton from "../../components/reused/Buttons/Button";
+import NavigationPath from "../../components/reused/Buttons/NavigationPath";
 
 const initCategories = [];
 
@@ -14,7 +14,7 @@ export default function Category() {
   return (
     <div className={styles.container}>
       <div>
-        <MainPage_button />
+        <NavigationPath />
         <CustomButton title="Categories" className={styles.second_button} />
       </div>
 

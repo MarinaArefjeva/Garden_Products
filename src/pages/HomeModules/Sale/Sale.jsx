@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Sale.module.css";
 import Line from "../../../assets/images/categories/Line.svg";
 import { useGetAllProductsQuery } from "../../../API/Products_api";
-import ProductCart from "../../../components/ProductCart/ProductCart";
+import ProductCart from "../../../components/reused/ProductCart/ProductCart";
 
 const initAllproducts = [];
 

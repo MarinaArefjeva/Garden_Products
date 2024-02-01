@@ -15,7 +15,7 @@ import {
 import { productsApi } from "../API/Products_api";
 
 const rootReducer = combineReducers({
-  basketProducts: cartSlice,
+  cart: cartSlice,
   products: productsSlice,
   [productsApi.reducerPath]: productsApi.reducer,
 });

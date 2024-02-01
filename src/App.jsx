@@ -8,7 +8,6 @@ import Tools from "./pages/ToolsModules/Tools";
 import Item from "./pages/ItemModules/Item";
 import Cart from "./pages/CartModules/Cart";
 import NotFound from "./pages/NotFoundModules/NotFound";
-import Page1 from "./pages/Page1";
 import Layouts from "./pages/Layouts/Layouts";
 
 function App() {
@@ -24,7 +23,6 @@ function App() {
           <Route path="Cart" element={<Cart />} />
           <Route path="Item" element={<Item />} />
           <Route path="NotFound" element={<NotFound />} />
-          <Route path="Page1" element={<Page1 />} />
         </Route>
       </Routes>
     </div>

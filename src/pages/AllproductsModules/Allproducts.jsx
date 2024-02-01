@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./Allproducts.module.css";
-import Price_filter from "../../components/FiltrationModules/Price_filter";
-import Discounted_filter from "../../components/FiltrationModules/Discounted_filter";
-import Sorted_filter from "../../components/FiltrationModules/Sorted_filter";
+import Price_filter from "../../components/reused/FiltrationModules/Price_filter";
+import Discounted_filter from "../../components/reused/FiltrationModules/Discounted_filter";
+import Sorted_filter from "../../components/reused/FiltrationModules/Sorted_filter";
 import { useGetAllProductsQuery } from "../../API/Products_api";
-import ProductCart from "../../components/ProductCart/ProductCart";
-import MainPage_button from "../../components/Buttons/MainPage_button";
-import CustomButton from "../../components/Buttons/Button";
+import ProductCart from "../../components/reused/ProductCart/ProductCart";
+import CustomButton from "../../components/reused/Buttons/Button";
+import NavigationPath from "../../components/reused/Buttons/NavigationPath";
 
 const initAllproducts = [];
 
@@ -16,7 +16,7 @@ export default function Allproducts() {
   return (
     <div className={styles.container}>
       <div>
-        <MainPage_button />
+        <NavigationPath />
         <CustomButton title="All products" className={styles.second_button} />
       </div>
 
@@ -29,9 +29,7 @@ export default function Allproducts() {
       </div>
 
       <div className={styles.container_cards}>
-        {allproducts.map((product) => (
-          <ProductCart product={product} />
-        ))}
+        <ProductCart arr={allproducts} />
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <>
       <header>
-        <NavLink to="/MainPage">
+        <NavLink to="/">
           <img className={styles.logo} src={logo} />
         </NavLink>
         <ul className={styles.nav}>

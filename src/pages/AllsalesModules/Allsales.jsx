@@ -1,10 +1,11 @@
 import React, { useMemo } from "react";
 import styles from "./Allsales.module.css";
-import Price_filter from "../../components/FiltrationModules/Price_filter";
-import Sorted_filter from "../../components/FiltrationModules/Sorted_filter";
+import Price_filter from "../../components/reused/FiltrationModules/Price_filter";
+import Sorted_filter from "../../components/reused/FiltrationModules/Sorted_filter";
 import { useGetAllProductsQuery } from "../../API/Products_api";
-import ProductCart from "../../components/ProductCart/ProductCart";
-import MainPage_button from "../../components/Buttons/MainPage_button";
+import ProductCart from "../../components/reused/ProductCart/ProductCart";
+import NavigationPath from "../../components/reused/Buttons/NavigationPath";
+import CustomButton from "../../components/reused/Buttons/Button";
 
 const initProduct = [];
 
@@ -17,8 +18,8 @@ export default function Allsales() {
 
   return (
     <div className={styles.container}>
-      <MainPage_button />
-      <button className={styles.second_button}>All sales</button>
+      <NavigationPath />
+      <CustomButton title="All sales" className={styles.second_button} />
 
       <h1 className={styles.title}>All sales</h1>
 
@@ -28,9 +29,7 @@ export default function Allsales() {
       </div>
 
       <div className={styles.container_cards}>
-        {productsAllsales.map((product) => (
-          <ProductCart product={product} />
-        ))}
+        <ProductCart arr={productsAllsales} />
       </div>
     </div>
   );

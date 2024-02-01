@@ -9,8 +9,6 @@ header {
     padding: 30px 40px;
     font-size: 20px;
     font-weight: 500;
-
-
 }
 
 .nav {
@@ -23,6 +21,11 @@ header {
     text-decoration: none;
     color: black;
 }
+
+.link:hover {
+    color: rgba(51, 153, 51, 1)
+}
+
 
 .basket {
     width: 40px;

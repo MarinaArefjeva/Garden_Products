@@ -1,0 +1,36 @@
+.button_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 32px;
+    padding-top: 32px;
+}
+
+.minus_button,
+.plus_button {
+    width: 58px;
+    height: 58px;
+    background-color: white;
+    border: 1px solid rgba(221, 221, 221, 1);
+}
+
+.minus_button {
+    width: 58px;
+    height: 58px;
+    background-color: white;
+    border: 1px solid rgba(221, 221, 221, 1);
+}
+
+.count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 96px;
+    height: 58px;
+    font-size: 20px;
+    font-weight: 600;
+    align-items: center;
+    background-color: white;
+    border: 1px solid rgba(221, 221, 221, 1);
+}

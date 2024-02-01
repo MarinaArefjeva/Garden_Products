@@ -55,17 +55,18 @@
     font-weight: 700;
 }
 
+.sale_price {
+    font-size: 64px;
+    width: 700;
+
+}
 
 .full_price {
-    font-size: 64px;
-    width: 700px;
-}
-
-.sale_price {
     font-size: 40px;
-    width: 500;
+    width: 500px;
     color: rgba(221, 221, 221, 1);
 }
+
 
 .buttons {
     display: flex;

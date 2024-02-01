@@ -1,14 +1,13 @@
 import React from "react";
 import styles from "./Tools.module.css";
-import Line from "../../components/Buttons/Line";
-import Price_filter from "../../components/FiltrationModules/Price_filter";
-import Discounted_filter from "../../components/FiltrationModules/Discounted_filter";
-import Sorted_filter from "../../components/FiltrationModules/Sorted_filter";
+import Price_filter from "../../components/reused/FiltrationModules/Price_filter";
+import Discounted_filter from "../../components/reused/FiltrationModules/Discounted_filter";
+import Sorted_filter from "../../components/reused/FiltrationModules/Sorted_filter";
 import { useLocation } from "react-router-dom";
 import { useGetToolsQuery } from "../../API/Products_api";
-import ProductCart from "../../components/ProductCart/ProductCart";
-import MainPage_button from "../../components/Buttons/MainPage_button";
-import CustomButton from "../../components/Buttons/Button";
+import ProductCart from "../../components/reused/ProductCart/ProductCart";
+import CustomButton from "../../components/reused/Buttons/Button";
+import NavigationPath from "../../components/reused/Buttons/NavigationPath";
 const initAllproducts = [];
 
 export default function Tools() {
@@ -20,9 +19,8 @@ export default function Tools() {
   return (
     <div className={styles.container}>
       <div>
-        <MainPage_button />
+        <NavigationPath />
         <CustomButton title="Categories" className={styles.second_button} />
-        <Line />
         <CustomButton
           title="Tools and equipment"
           className={styles.third_button}
@@ -37,7 +35,7 @@ export default function Tools() {
         <Sorted_filter />
       </div>
       <div className={styles.container_cards}>
-        {data ? data.map((product) => <ProductCart product={product} />) : ""}
+        <ProductCart arr={data} />
       </div>
     </div>
   );
