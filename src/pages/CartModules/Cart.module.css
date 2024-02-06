@@ -38,12 +38,6 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
-    /* display: flex;
-    width: 780px;
-    align-items: flex-start;
-    gap: 32px;
-    border-radius: var(--radius-big, 12px);
-    border: 1px solid var(--grey-divider, #DDD); */
 }
 
 .cart_container {

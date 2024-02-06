@@ -12,7 +12,7 @@ export default function ProductCart({ arr }) {
     dispatch(addProduct(product));
   };
   return (
-    <>
+    <div className={styles.container_cards}>
       {arr
         ? arr.map((product) => (
             <div className={styles.card} key={product.id}>
@@ -60,6 +60,6 @@ export default function ProductCart({ arr }) {
             </div>
           ))
         : ""}
-    </>
+    </div>
   );
 }

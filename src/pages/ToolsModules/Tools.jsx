@@ -7,36 +7,39 @@ import { useLocation } from "react-router-dom";
 import { useGetToolsQuery } from "../../API/Products_api";
 import ProductCart from "../../components/reused/ProductCart/ProductCart";
 import CustomButton from "../../components/reused/Buttons/Button";
+import Line from "../../components/reused/Buttons/Line";
 import NavigationPath from "../../components/reused/Buttons/NavigationPath";
-const initAllproducts = [];
+let initAllproducts = [];
 
 export default function Tools() {
   const location = useLocation();
   const { state } = location;
-  const { data: allproducts = initAllproducts } = useGetToolsQuery(state.id);
-  const { category, data } = allproducts;
-
+  const { data, isLoading } = useGetToolsQuery(state.id);
+  if (isLoading) {
+    return <div>Loading...</div>;
+  } else {
+    initAllproducts = data;
+  }
   return (
     <div className={styles.container}>
-      <div>
+      <>
         <NavigationPath />
         <CustomButton title="Categories" className={styles.second_button} />
+        <Line />
         <CustomButton
           title="Tools and equipment"
           className={styles.third_button}
         />
-      </div>
+      </>
 
-      <h1 className={styles.title}>{}</h1>
+      <h1 className={styles.title}>Discounted items</h1>
 
       <div className={styles.form_container}>
         <Price_filter />
         <Discounted_filter />
         <Sorted_filter />
       </div>
-      <div className={styles.container_cards}>
-        <ProductCart arr={data} />
-      </div>
+      <ProductCart arr={initAllproducts.data} />
     </div>
   );
 }

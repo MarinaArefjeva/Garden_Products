@@ -7,14 +7,19 @@ import ProductCart from "../../components/reused/ProductCart/ProductCart";
 import NavigationPath from "../../components/reused/Buttons/NavigationPath";
 import CustomButton from "../../components/reused/Buttons/Button";
 
-const initProduct = [];
+let initProduct = [];
 
 export default function Allsales() {
-  const { data: products = initProduct } = useGetAllProductsQuery();
+  const { data, isLoading } = useGetAllProductsQuery();
 
-  const productsAllsales = useMemo(() => {
-    return products.filter((product) => product.discont_price);
-  }, [products]);
+  if (isLoading) {
+    return <div>Loading...</div>;
+  } else {
+    initProduct = data;
+  }
+  const productsAllsales = initProduct.filter(
+    (product) => product.discont_price
+  );
 
   return (
     <div className={styles.container}>
@@ -28,9 +33,7 @@ export default function Allsales() {
         <Sorted_filter />
       </div>
 
-      <div className={styles.container_cards}>
-        <ProductCart arr={productsAllsales} />
-      </div>
+      <ProductCart arr={productsAllsales} />
     </div>
   );
 }

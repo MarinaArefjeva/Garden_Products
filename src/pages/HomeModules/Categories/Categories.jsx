@@ -22,7 +22,7 @@ export default function Categories() {
         {category.map((category) => (
           <NavLink className={styles.card} key={category.id}>
             <img className={styles.picture} src={API_URL + category.image} />
-            <h2>{category.title}</h2>
+            <h2 className={styles.category_title}>{category.title}</h2>
           </NavLink>
         ))}
       </div>

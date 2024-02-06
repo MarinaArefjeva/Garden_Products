@@ -3,7 +3,7 @@ import styles from "./Cart.module.css";
 import Line from "../../assets/images/categories/Line.svg";
 import x from "../../assets/images/item/x.svg";
 import CartButton from "../../components/reused/CartButton/CartButton";
-import OrderForm from "../../components/reused/OrderForm/OrderForm";
+import CartForm from "../../components/CartForm/CartForm";
 import { useDispatch, useSelector } from "react-redux";
 import { cartSelector, removeProduct } from "../../store/slices/CartSlices";
 import { API_URL } from "../../API/api";
@@ -11,11 +11,10 @@ import { API_URL } from "../../API/api";
 const Cart = () => {
   const { cart: cartProducts } = useSelector(cartSelector);
   const allPrice = cartProducts.map((product) => {
-    // if (product.discont_price) {
-    //   return product.discont_price;
-    // }
-    // return product.price;
-    console.log(product);
+    if (product.discont_price) {
+      return product.discont_total_price;
+    }
+    return product.total_price;
   });
 
   const totalAmount = allPrice
@@ -62,25 +61,20 @@ const Cart = () => {
                       <CartButton product={product} />
 
                       <div className={styles.price_container}>
-                        {/* {product.discont_price ? (
+                        {product.discont_price ? (
                           <>
                             <p className={styles.sale_price}>
-                              {product.discont_price + "$"}
+                              {product.discont_total_price + "$"}
                             </p>
                             <p className={styles.full_price}>
-                              {product.price + "$"}
+                              {product.total_price + "$"}
                             </p>
                           </>
                         ) : (
                           <p className={styles.sale_price}>
-                            {product.price + "$"}
+                            {product.total_price + "$"}
                           </p>
-                        )} */}
-
-                        {/* <span className={styles.sale_price}>
-                      {product.discont_price}
-                    </span>
-                    <span className={styles.full_price}>{product.price}</span> */}
+                        )}
                       </div>
                     </div>
                   </div>
@@ -88,7 +82,10 @@ const Cart = () => {
               ))
             : ""}
         </div>
-        <OrderForm price={totalAmount} />
+        <CartForm price={totalAmount} />
+        <div>
+          <button className={styles.cart_button}>Order</button>
+        </div>
       </div>
     </div>
   );

@@ -7,7 +7,15 @@ import ProductCart from "../../../components/reused/ProductCart/ProductCart";
 const initAllproducts = [];
 
 export default function Sale() {
-  const { data: allproducts = initAllproducts } = useGetAllProductsQuery();
+  // const { data: allproducts = initAllproducts } = useGetAllProductsQuery();
+  const { data, isLoading } = useGetAllProductsQuery();
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  } else {
+    initAllproducts = data;
+  }
+  const productsAllsales = data.filter((product) => product.discont_price);
 
   return (
     <div className={styles.container}>
@@ -18,9 +26,7 @@ export default function Sale() {
       </div>
 
       <div className={styles.container_cards}>
-        {allproducts.slice(0, 4).map((product) => (
-          <ProductCart product={product} />
-        ))}
+        <ProductCart arr={productsAllsales.slice(0, 4)} />
       </div>
     </div>
   );

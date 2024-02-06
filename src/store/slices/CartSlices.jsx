@@ -33,6 +33,7 @@ const сartSlice = createSlice({
             discont_total_price: el.discont_price * el.count,
           };
         }
+        return el;
       });
     },
 

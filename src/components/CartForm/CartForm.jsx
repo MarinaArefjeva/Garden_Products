@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./OrderForm.module.css";
+import styles from "./CartForm.module.css";
 
-export default function OrderForm({ price }) {
+export default function CartForm({ price }) {
   return (
     <div className={styles.cart_form}>
       <h2 className={styles.subtitle}>Order details</h2>
@@ -17,7 +17,6 @@ export default function OrderForm({ price }) {
         <input className={styles.input_order_form} placeholder="Phone number" />
         <input className={styles.input_order_form} placeholder="Email" />
       </div>
-      <button className={styles.cart_button}>Order</button>
     </div>
   );
 }

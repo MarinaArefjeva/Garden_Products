@@ -28,7 +28,7 @@ export default function Category() {
             key={category.id}
           >
             <img className={styles.picture} src={API_URL + category.image} />
-            <h2>{category.title}</h2>
+            <h2 className={styles.name}>{category.title}</h2>
           </NavLink>
         ))}
       </div>

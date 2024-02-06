@@ -13,11 +13,14 @@
 .picture {
     width: 316px;
     height: 350px;
+    border-radius: 12px;
+    padding-bottom: 16px;
 }
 
 .title {
     font-size: 64px;
     font-weight: 700;
+    padding-bottom: 30px;
 }
 
 .container_cards {
@@ -35,9 +38,11 @@
     flex-direction: column;
     align-items: center;
     padding-bottom: 58px;
+    text-decoration: none;
 }
 
 .name {
     font-size: 20px;
     font-weight: 500;
+    color: black;
 }

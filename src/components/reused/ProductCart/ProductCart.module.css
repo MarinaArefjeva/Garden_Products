@@ -1,9 +1,15 @@
+.container_cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
 .card {
     width: 316px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid rgba(221, 221, 221, 1);
     text-decoration: none;
     border-radius: var(--radius-big, 12px);
     border: 1px solid var(--grey-divider, #DDD);
@@ -61,31 +67,25 @@
     letter-spacing: 0.6px;
 }
 
-
-
-
-
-/* .picture {
-    width: 316px;
-    height: 350px;
-} */
-
 .text {
     width: 316px;
     height: 118px;
+    align-items: center;
+    text-align: center;
 }
 
 .product_title {
     font-size: 20px;
     font-weight: 500;
     color: black;
+    padding-bottom: 16px;
 }
 
 .prices {
     display: flex;
-    align-items: baseline;
     gap: 16px;
     align-self: stretch;
+    justify-content: center;
 }
 
 .sale_price {

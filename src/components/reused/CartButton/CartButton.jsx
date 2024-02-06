@@ -10,14 +10,14 @@ import {
 
 export default function CartButton({ product }) {
   const dispatch = useDispatch();
-  console.log(product);
+  // console.log(product);
 
   const increment = (productId) => {
-    // dispatch(incrementProduct(productId));
+    dispatch(incrementProduct(productId));
   };
 
   const decrement = (productId) => {
-    // dispatch(decrementProduct(productId));
+    dispatch(decrementProduct(productId));
   };
 
   return (
@@ -28,7 +28,7 @@ export default function CartButton({ product }) {
       >
         <img className={styles.minus} src={minus} />
       </button>
-      <div className={styles.count}>1</div>
+      <div className={styles.count}>{product.count}</div>
       <button
         onClick={() => increment(product.id)}
         className={styles.plus_button}

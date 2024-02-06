@@ -7,11 +7,15 @@ import { useGetAllProductsQuery } from "../../API/Products_api";
 import ProductCart from "../../components/reused/ProductCart/ProductCart";
 import CustomButton from "../../components/reused/Buttons/Button";
 import NavigationPath from "../../components/reused/Buttons/NavigationPath";
+import { useSelector } from "react-redux";
+import { cartSelector } from "../../store/slices/CartSlices";
 
 const initAllproducts = [];
 
 export default function Allproducts() {
   const { data: allproducts = initAllproducts } = useGetAllProductsQuery();
+  const { cart: cartProducts } = useSelector(cartSelector);
+  console.log(cartProducts);
 
   return (
     <div className={styles.container}>
@@ -28,9 +32,7 @@ export default function Allproducts() {
         <Sorted_filter />
       </div>
 
-      <div className={styles.container_cards}>
-        <ProductCart arr={allproducts} />
-      </div>
+      <ProductCart arr={allproducts} />
     </div>
   );
 }

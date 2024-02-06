@@ -11,6 +11,7 @@ footer {
     grid-template-columns: 2fr 1fr;
     gap: 32px;
 
+
 }
 
 .title {
@@ -23,6 +24,7 @@ footer {
     width: 780px;
     height: 150px;
     padding: 32px;
+    border-radius: 12px;
     gap: 16px;
     background-color: rgba(241, 243, 244, 1);
 }
@@ -46,6 +48,7 @@ footer {
     height: 150px;
     padding: 32px;
     column-gap: 16px;
+    border-radius: 12px;
     background-color: rgba(241, 243, 244, 1)
 }
 
@@ -56,6 +59,7 @@ footer {
 .address {
     width: 780px;
     height: 194px;
+    border-radius: 12px;
     padding: 32px;
     gap: 16px;
     background-color: rgba(241, 243, 244, 1)
@@ -72,6 +76,7 @@ footer {
     width: 548px;
     height: 194px;
     padding: 32px;
+    border-radius: 12px;
     background-color: rgba(241, 243, 244, 1)
 }
 

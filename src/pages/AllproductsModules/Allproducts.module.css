@@ -22,10 +22,3 @@
     display: flex;
     column-gap: 30px;
 }
-
-.container_cards {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 32px;
-}

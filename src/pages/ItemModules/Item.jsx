@@ -1,18 +1,28 @@
 import React from "react";
 import styles from "../ItemModules/Item.module.css";
 import Line from "../../components/reused/Buttons/Line";
-import { useGetProductQuery } from "../../API/Products_api";
+import {
+  useGetCategoriesQuery,
+  useGetProductQuery,
+} from "../../API/Products_api";
 import { useLocation } from "react-router-dom";
 import { API_URL } from "../../API/api";
 import CartButton from "../../components/reused/CartButton/CartButton";
 import CustomButton from "../../components/reused/Buttons/Button";
 import NavigationPath from "../../components/reused/Buttons/NavigationPath";
 const initProducts = [];
+// const initCategories = [];
 
 export default function Item({ product }) {
   const location = useLocation();
   const { state } = location;
   const { data: cart = initProducts } = useGetProductQuery(state.id);
+  // const newCart = cart;
+  // console.log(newCart);
+  // const { data: category = initCategories } = useGetCategoriesQuery();
+  // const newCategory = category;
+  // const categoryName = () => newCategory[newCart[0].categoryId - 1].title;
+  // console.log(categoryName());
 
   return (
     <div className={styles.container}>
@@ -29,7 +39,7 @@ export default function Item({ product }) {
       </div>
 
       {cart.map((product) => (
-        <div className={styles.item}>
+        <div key={product.id} className={styles.item}>
           <img className={styles.picture} src={API_URL + product.image} />
           <div>
             <h1 className={styles.title}>{product.title}</h1>
@@ -47,7 +57,8 @@ export default function Item({ product }) {
           </div>
 
           <div className={styles.buttons}>
-            <CartButton />
+            <CartButton product={product} />
+            <button className={styles.button}>Add to cart</button>
           </div>
 
           <div className={styles.about_product}>
