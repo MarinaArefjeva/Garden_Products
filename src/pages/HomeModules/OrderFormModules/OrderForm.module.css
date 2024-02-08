@@ -25,13 +25,15 @@
     width: 516px;
     height: 58px;
     margin-bottom: 16px;
-    color: var(--txt-white);
     font-size: 20px;
     font-weight: 500;
-    line-height: 130%;
     border: 1px solid white;
     border-radius: var(--radius-small, 6px);
-    background: linear-gradient(261deg, #0B710B 32.63%, #393 98.96%);
+    background: transparent;
+}
+
+::-webkit-input-placeholder {
+    color: #c5c5c5;
 }
 
 .button {

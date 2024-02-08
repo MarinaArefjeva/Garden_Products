@@ -4,10 +4,9 @@ import Line from "../../../assets/images/categories/Line.svg";
 import { useGetAllProductsQuery } from "../../../API/Products_api";
 import ProductCart from "../../../components/reused/ProductCart/ProductCart";
 
-const initAllproducts = [];
+let initAllproducts = [];
 
 export default function Sale() {
-  // const { data: allproducts = initAllproducts } = useGetAllProductsQuery();
   const { data, isLoading } = useGetAllProductsQuery();
 
   if (isLoading) {

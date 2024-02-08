@@ -16,6 +16,7 @@ export default function CartForm({ price }) {
         <input className={styles.input_order_form} placeholder="Name" />
         <input className={styles.input_order_form} placeholder="Phone number" />
         <input className={styles.input_order_form} placeholder="Email" />
+        <button className={styles.button}>Order</button>
       </div>
     </div>
   );

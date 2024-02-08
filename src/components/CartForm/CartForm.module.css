@@ -60,3 +60,12 @@
     background-color: rgba(51, 153, 51, 1);
     color: white;
 }
+
+.button {
+    width: 484px;
+    height: 58px;
+    border-radius: 6px;
+    padding: 16px 32px;
+    background-color: var(--green);
+
+}
