@@ -2,7 +2,6 @@ import React, { isValidElement } from "react";
 import { useForm } from "react-hook-form";
 import styles from "./OrderForm.module.css";
 import products from "../../../assets/images/order.form/products.svg";
-import { isValidDateValue } from "@testing-library/user-event/dist/utils";
 
 export default function OrderForm() {
   const {
@@ -29,39 +28,43 @@ export default function OrderForm() {
           <form onSubmit={handleSubmit(onSubmit)}>
             <label>
               <input
-                type="text"
+                type="name"
                 className={styles.input_order_form}
                 placeholder="Name"
-                {...register("Name", {
-                  required: true,
-                })}
-              />
-            </label>
-            <div>{errors?.Name && <p>Name?.message || "Error!"</p>}</div>
-            <label>
-              <input
-                type="text"
-                className={styles.input_order_form}
-                placeholder="Phone number"
-                {...register("Phone number", {
+                {...register("name", {
                   required: true,
                 })}
               />
             </label>
             <div>
-              {errors?.Name && <p>Phone number?.message || "Error!"</p>}
+              {errors?.name && <p>{`${errors.name?.message}  "Error!"`}</p>}
             </div>
             <label>
               <input
-                type="text"
+                type="number"
                 className={styles.input_order_form}
-                placeholder="Email"
-                {...register("Email", {
+                placeholder="Phone number"
+                {...register("number", {
                   required: true,
                 })}
               />
             </label>
-            <div>{errors?.Name && <p>Email?.message || "Error!"</p>}</div>
+            <div>
+              {errors?.name && <p>{`${errors.number?.message}  "Error!"`}</p>}
+            </div>
+            <label>
+              <input
+                type="email"
+                className={styles.input_order_form}
+                placeholder="Email"
+                {...register("email", {
+                  required: true,
+                })}
+              />
+            </label>
+            <div>
+              {errors?.email && <p>{`${errors.email?.message}  "Error!"`}</p>}
+            </div>
 
             <button className={styles.button}>Get a discount</button>
           </form>

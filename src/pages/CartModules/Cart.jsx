@@ -10,11 +10,12 @@ import { API_URL } from "../../API/api";
 
 const Cart = () => {
   const { cart: cartProducts } = useSelector(cartSelector);
+
   const allPrice = cartProducts.map((product) => {
-    // if (product.discont_price) {
-    //   return product.discont_total_price;
-    // }
-    // return product.total_price;
+    if (product.discont_total_price) {
+      return product.discont_total_price;
+    }
+    return product.total_price;
   });
 
   const totalAmount = allPrice
@@ -34,59 +35,55 @@ const Cart = () => {
         <img className={styles.Line} src={Line} />
         <button className={styles.button}>Back to the store</button>
       </div>
+
       <div className={styles.img_orderform}>
         <div className={styles.carts}>
           {cartProducts
             ? cartProducts.map((product) => (
-                <p onClick={() => removeProductInCart(product)}>ok</p>
-                // <div className={styles.cart_container}>
-                //   <div className={styles.cart}>
-                //     <img
-                //       className={styles.secateurs}
-                //       src={API_URL + product.image}
-                //     />
-                //   </div>
-                //   <div className={styles.cart_product}>
-                //     <div className={styles.product_item}>
-                //       <h2 className={styles.product_title}>{product.title}</h2>
-                //       <button className={styles.close}>
-                //         {/* <img
-                //           onClick={() => removeProductInCart(product)}
-                //           className={styles.x}
-                //           src={x}
-                //         /> */}
-                //       </button>
-                //     </div>
+                <div key={product.id} className={styles.cart_container}>
+                  <img
+                    className={styles.picture}
+                    src={API_URL + product.image}
+                  />
 
-                //     <div className={styles.cart_item}>
-                //       <CartButton product={product} />
+                  <div className={styles.cart_product}>
+                    <div className={styles.product_item}>
+                      <h2 className={styles.product_title}>{product.title}</h2>
+                      <button className={styles.close}>
+                        <img
+                          onClick={() => removeProductInCart(product)}
+                          className={styles.x}
+                          src={x}
+                        />
+                      </button>
+                    </div>
 
-                //       <div className={styles.price_container}>
-                //         {product.discont_price ? (
-                //           <>
-                //             <p className={styles.sale_price}>
-                //               {product.discont_total_price + "$"}
-                //             </p>
-                //             <p className={styles.full_price}>
-                //               {product.total_price + "$"}
-                //             </p>
-                //           </>
-                //         ) : (
-                //           <p className={styles.sale_price}>
-                //             {product.total_price + "$"}
-                //           </p>
-                //         )}
-                //       </div>
-                //     </div>
-                //   </div>
-                // </div>
+                    <div className={styles.cart_item}>
+                      <CartButton product={product} />
+
+                      <div className={styles.price_container}>
+                        {product.discont_total_price ? (
+                          <>
+                            <p className={styles.sale_price}>
+                              {product.discont_total_price + "$"}
+                            </p>
+                            <p className={styles.full_price}>
+                              {product.total_price + "$"}
+                            </p>
+                          </>
+                        ) : (
+                          <p className={styles.sale_price}>
+                            {product.total_price + "$"}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               ))
             : ""}
         </div>
         <CartForm price={totalAmount} />
-        <div>
-          <button className={styles.cart_button}>Order</button>
-        </div>
       </div>
     </div>
   );

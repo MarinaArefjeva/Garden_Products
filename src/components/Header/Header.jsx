@@ -3,8 +3,11 @@ import styles from "./Header.module.css";
 import basket from "../../assets/images/header/bag.svg";
 import logo from "../../assets/images/header/logo.svg";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { cartSelector } from "../../store/slices/CartSlices";
 
 export default function Header() {
+  const { cart: cartProducts } = useSelector(cartSelector);
   return (
     <>
       <header>
@@ -26,7 +29,10 @@ export default function Header() {
           </NavLink>
         </ul>
         <NavLink to="/Cart">
-          <img className={styles.basket} src={basket} />
+          <div className={styles.basket_icon}>
+            <img className={styles.basket} src={basket} />
+            <div className={styles.count_product}>{cartProducts.length}</div>
+          </div>
         </NavLink>
       </header>
     </>

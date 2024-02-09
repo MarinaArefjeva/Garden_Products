@@ -1,9 +1,5 @@
 .button_container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 32px;
-    padding-top: 32px;
 }
 
 .minus_button,

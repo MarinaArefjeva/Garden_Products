@@ -49,23 +49,25 @@
     border: 1px solid var(--grey-divider, #DDD);
 }
 
+/* 
 .cart {
-    display: flex;
-    width: 780px;
-    height: 180px;
-}
 
-.secateurs {
+    border-radius: 12px, 0, 0, 12px;
+    display: flex;
+    height: 180px;
+} */
+
+.picture {
     width: 200px;
     height: 180px;
-    border-radius: 12px, 0px, 0px, 12px;
-    border: 1px solid rgba(221, 221, 221, 1);
+    border-radius: 12px, 0, 0, 12px;
+    /* border: 1px solid rgba(221, 221, 221, 1); */
 }
 
 .cart_product {
     width: 548px;
     height: 180px;
-    border: 1px solid rgba(221, 221, 221, 1);
+    border-left: 1px solid rgba(221, 221, 221, 1);
 }
 
 .product_item {

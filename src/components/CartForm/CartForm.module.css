@@ -64,8 +64,12 @@
 .button {
     width: 484px;
     height: 58px;
+    margin-top: 32px;
     border-radius: 6px;
     padding: 16px 32px;
-    background-color: var(--green);
+    background: #393;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
 
 }

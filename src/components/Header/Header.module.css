@@ -26,8 +26,28 @@ header {
     color: rgba(51, 153, 51, 1)
 }
 
+.basket_icon {
+    position: relative;
+}
 
 .basket {
     width: 40px;
     height: 40px;
+}
+
+.count_product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(51, 153, 51, 1);
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 90%;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
 }

@@ -3,13 +3,16 @@ import { NavLink } from "react-router-dom";
 import styles from "./ProductCart.module.css";
 import { API_URL } from "../../../API/api";
 import { useDispatch } from "react-redux";
-import { addProduct } from "../../../store/slices/CartSlices";
+import {
+  addOrIncrementProduct,
+  addProduct,
+} from "../../../store/slices/CartSlices";
 
 export default function ProductCart({ arr }) {
   const dispatch = useDispatch();
 
   const addProductInCart = (product) => {
-    dispatch(addProduct(product));
+    dispatch(addOrIncrementProduct(product));
   };
   return (
     <div className={styles.container_cards}>
