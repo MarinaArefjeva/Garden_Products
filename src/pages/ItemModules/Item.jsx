@@ -13,7 +13,6 @@ import NavigationPath from "../../components/reused/Buttons/NavigationPath";
 import { addOrIncrementProduct } from "../../store/slices/CartSlices";
 import { useDispatch } from "react-redux";
 const initProducts = [];
-// const initCategories = [];
 
 export default function Item({ product }) {
   const location = useLocation();
@@ -23,12 +22,6 @@ export default function Item({ product }) {
   const addProduct = (productAdd) => {
     dispatch(addOrIncrementProduct(productAdd));
   };
-  // const newCart = cart;
-  // console.log(newCart);
-  // const { data: category = initCategories } = useGetCategoriesQuery();
-  // const newCategory = category;
-  // const categoryName = () => newCategory[newCart[0].categoryId - 1].title;
-  // console.log(categoryName());
 
   return (
     <div className={styles.container}>
@@ -50,7 +43,7 @@ export default function Item({ product }) {
               <img className={styles.picture} src={API_URL + product.image} />
               <div className={styles.description_container}>
                 <h1 className={styles.title}>{product.title}</h1>
-                <div>
+                <div className={styles.prices}>
                   {product.discont_price ? (
                     <>
                       <p className={styles.sale_price}>

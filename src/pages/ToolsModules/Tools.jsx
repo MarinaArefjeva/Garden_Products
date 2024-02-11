@@ -9,17 +9,31 @@ import ProductCart from "../../components/reused/ProductCart/ProductCart";
 import CustomButton from "../../components/reused/Buttons/Button";
 import Line from "../../components/reused/Buttons/Line";
 import NavigationPath from "../../components/reused/Buttons/NavigationPath";
-let initAllproducts = [];
+import { useDispatch, useSelector } from "react-redux";
+import { useFilterByDiscount } from "../../hooks/useFilterByDiscount";
+import { useFilterByPrice } from "../../hooks/useFilterByPrice";
+import { useFilterBySorted } from "../../hooks/useFilterBySorted";
+import {
+  productsSelector,
+  setProducts,
+} from "../../store/slices/ProductsSlices";
 
 export default function Tools() {
   const location = useLocation();
   const { state } = location;
-  const { data, isLoading } = useGetToolsQuery(state.id);
-  if (isLoading) {
-    return <div>Loading...</div>;
-  } else {
-    initAllproducts = data;
-  }
+  const { data: allProducts } = useGetToolsQuery(state.id);
+  const {
+    filterValue,
+    filteredList: filteredListByDiscount,
+    onFilter,
+  } = useFilterByDiscount(allProducts && allProducts.data, "discont_price");
+  const { filterByMax, filterByMin, filteredList, priceFrom, priceTo } =
+    useFilterByPrice(filteredListByDiscount);
+  const { onSort, sortedList, sortMode } = useFilterBySorted(
+    filteredList,
+    "price"
+  );
+
   return (
     <div className={styles.container}>
       <>
@@ -35,11 +49,20 @@ export default function Tools() {
       <h1 className={styles.title}>Discounted items</h1>
 
       <div className={styles.form_container}>
-        <Price_filter />
-        <Discounted_filter />
-        <Sorted_filter />
+        <Price_filter
+          priceFrom={priceFrom}
+          priceTo={priceTo}
+          filterByMin={filterByMin}
+          filterByMax={filterByMax}
+        />
+        <Discounted_filter
+          type="checkbox"
+          checked={filterValue}
+          onChange={onFilter}
+        />
+        <Sorted_filter sortProducts={onSort} sortMode={sortMode} />
       </div>
-      <ProductCart arr={initAllproducts.data} />
+      <ProductCart arr={sortedList} />
     </div>
   );
 }

@@ -36,13 +36,12 @@ export default function CartForm({ price }) {
               className={styles.input_order_form}
               placeholder="Name"
               {...register("name", {
-                required: true,
+                required: "field is required ",
               })}
             />
           </label>
-          <div>
-            {errors?.name && <p>{`${errors.name?.message}  "Error!"`}</p>}
-          </div>
+          {errors?.name && <p>{`${errors.name?.message}  "Error!"`}</p>}
+
           <label>
             <input
               type="number"
@@ -53,9 +52,8 @@ export default function CartForm({ price }) {
               })}
             />
           </label>
-          <div>
-            {errors?.name && <p>{`${errors.number?.message}  "Error!"`}</p>}
-          </div>
+          {errors?.number && <p>{`${errors.number?.message}  "Error!"`}</p>}
+
           <label>
             <input
               type="email"
@@ -66,9 +64,7 @@ export default function CartForm({ price }) {
               })}
             />
           </label>
-          <div>
-            {errors?.email && <p>{`${errors.email?.message}  "Error!"`}</p>}
-          </div>
+          {errors?.email && <p>{`${errors.email?.message}  "Error!"`}</p>}
           <button className={styles.button}>Order</button>
         </form>
       </div>

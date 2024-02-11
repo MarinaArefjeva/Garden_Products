@@ -9,8 +9,15 @@ import Item from "./pages/ItemModules/Item";
 import Cart from "./pages/CartModules/Cart";
 import NotFound from "./pages/NotFoundModules/NotFound";
 import Layouts from "./pages/Layouts/Layouts";
+import { useGetAllProductsQuery } from "./API/Products_api";
+import { useDispatch } from "react-redux";
+import { setProducts } from "./store/slices/ProductsSlices";
 
 function App() {
+  const dispatch = useDispatch();
+  const { data } = useGetAllProductsQuery();
+  dispatch(setProducts(data));
+
   return (
     <div>
       <Routes>

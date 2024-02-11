@@ -57,16 +57,23 @@
     font-weight: 700;
 }
 
+.prices {
+    display: flex;
+    gap: 16px;
+    align-self: stretch;
+}
+
 .sale_price {
     font-size: 64px;
     width: 700;
 
 }
 
-.full_price {
+.price {
     font-size: 40px;
     width: 500px;
     color: rgba(221, 221, 221, 1);
+    text-decoration: line-through;
 }
 
 .button_container {

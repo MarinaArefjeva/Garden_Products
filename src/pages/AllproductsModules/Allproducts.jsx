@@ -7,15 +7,28 @@ import { useGetAllProductsQuery } from "../../API/Products_api";
 import ProductCart from "../../components/reused/ProductCart/ProductCart";
 import CustomButton from "../../components/reused/Buttons/Button";
 import NavigationPath from "../../components/reused/Buttons/NavigationPath";
-import { useSelector } from "react-redux";
-import { cartSelector } from "../../store/slices/CartSlices";
-
-const initAllproducts = [];
+import { useDispatch, useSelector } from "react-redux";
+import {
+  productsSelector,
+  setProducts,
+} from "../../store/slices/ProductsSlices";
+import { useFilterByDiscount } from "../../hooks/useFilterByDiscount";
+import { useFilterByPrice } from "../../hooks/useFilterByPrice";
+import { useFilterBySorted } from "../../hooks/useFilterBySorted";
 
 export default function Allproducts() {
-  const { data: allproducts = initAllproducts } = useGetAllProductsQuery();
-  const { cart: cartProducts } = useSelector(cartSelector);
-  console.log(cartProducts);
+  const { products: allProducts } = useSelector(productsSelector);
+  const {
+    filterValue,
+    filteredList: filteredListByDiscount,
+    onFilter,
+  } = useFilterByDiscount(allProducts, "discont_price");
+  const { filterByMax, filterByMin, filteredList, priceFrom, priceTo } =
+    useFilterByPrice(filteredListByDiscount);
+  const { onSort, sortedList, sortMode } = useFilterBySorted(
+    filteredList,
+    "price"
+  );
 
   return (
     <div className={styles.container}>
@@ -27,12 +40,21 @@ export default function Allproducts() {
       <h1 className={styles.title}>All products</h1>
 
       <div className={styles.form_container}>
-        <Price_filter />
-        <Discounted_filter />
-        <Sorted_filter />
+        <Price_filter
+          priceFrom={priceFrom}
+          priceTo={priceTo}
+          filterByMin={filterByMin}
+          filterByMax={filterByMax}
+        />
+        <Discounted_filter
+          type="checkbox"
+          checked={filterValue}
+          onChange={onFilter}
+        />
+        <Sorted_filter sortProducts={onSort} sortMode={sortMode} />
       </div>
 
-      <ProductCart arr={allproducts} />
+      <ProductCart arr={sortedList} />
     </div>
   );
 }
