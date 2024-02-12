@@ -7,11 +7,8 @@ import { useGetAllProductsQuery } from "../../API/Products_api";
 import ProductCart from "../../components/reused/ProductCart/ProductCart";
 import CustomButton from "../../components/reused/Buttons/Button";
 import NavigationPath from "../../components/reused/Buttons/NavigationPath";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  productsSelector,
-  setProducts,
-} from "../../store/slices/ProductsSlices";
+import { useSelector } from "react-redux";
+import { productsSelector } from "../../store/slices/ProductsSlices";
 import { useFilterByDiscount } from "../../hooks/useFilterByDiscount";
 import { useFilterByPrice } from "../../hooks/useFilterByPrice";
 import { useFilterBySorted } from "../../hooks/useFilterBySorted";

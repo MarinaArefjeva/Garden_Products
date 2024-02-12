@@ -13,10 +13,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useFilterByDiscount } from "../../hooks/useFilterByDiscount";
 import { useFilterByPrice } from "../../hooks/useFilterByPrice";
 import { useFilterBySorted } from "../../hooks/useFilterBySorted";
-import {
-  productsSelector,
-  setProducts,
-} from "../../store/slices/ProductsSlices";
 
 export default function Tools() {
   const location = useLocation();
