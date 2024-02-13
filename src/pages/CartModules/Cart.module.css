@@ -82,18 +82,20 @@
     font-weight: 500;
     padding-left: 32px;
     padding-top: 32px;
-    padding-bottom: auto;
+    padding-bottom: 32px;
 }
 
 .cart_item {
     display: flex;
     align-items: end;
+    padding-left: 16px;
 }
 
 .price_container {
     width: 284px;
     height: 44px;
     gap: 16px;
+    display: flex;
 }
 
 .sale_price {
