@@ -48,7 +48,7 @@ export default function CartForm({ price }) {
               className={styles.input_order_form}
               placeholder="Phone number"
               {...register("number", {
-                required: true,
+                required: "field is required ",
               })}
             />
           </label>
@@ -60,7 +60,7 @@ export default function CartForm({ price }) {
               className={styles.input_order_form}
               placeholder="Email"
               {...register("email", {
-                required: true,
+                required: "field is required ",
               })}
             />
           </label>
