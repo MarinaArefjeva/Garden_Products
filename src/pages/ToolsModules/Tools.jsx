@@ -9,7 +9,6 @@ import ProductCart from "../../components/reused/ProductCart/ProductCart";
 import CustomButton from "../../components/reused/Buttons/Button";
 import Line from "../../components/reused/Buttons/Line";
 import NavigationPath from "../../components/reused/Buttons/NavigationPath";
-import { useDispatch, useSelector } from "react-redux";
 import { useFilterByDiscount } from "../../hooks/useFilterByDiscount";
 import { useFilterByPrice } from "../../hooks/useFilterByPrice";
 import { useFilterBySorted } from "../../hooks/useFilterBySorted";

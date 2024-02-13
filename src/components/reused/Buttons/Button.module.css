@@ -2,6 +2,7 @@
     padding-bottom: 40px;
     display: inline-flex;
     align-items: center;
+
 }
 
 .first_button {
@@ -9,7 +10,10 @@
     height: 36px;
     padding: 8px, 16px, 8px, 16px;
     border: 1px solid rgba(221, 221, 221, 1);
+    border-radius: 6px;
     color: rgba(139, 139, 139, 1);
+    background-color: white;
+
 }
 
 .Line_img {

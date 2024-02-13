@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../ItemModules/Item.module.css";
 import Line from "../../components/reused/Buttons/Line";
-import {useGetProductQuery} from "../../API/Products_api";
+import { useGetProductQuery } from "../../API/Products_api";
 import { useLocation } from "react-router-dom";
 import { API_URL } from "../../API/api";
 import CartButton from "../../components/reused/CartButton/CartButton";

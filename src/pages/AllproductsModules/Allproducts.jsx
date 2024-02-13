@@ -3,7 +3,6 @@ import styles from "./Allproducts.module.css";
 import Price_filter from "../../components/reused/FiltrationModules/Price_filter";
 import Discounted_filter from "../../components/reused/FiltrationModules/Discounted_filter";
 import Sorted_filter from "../../components/reused/FiltrationModules/Sorted_filter";
-import { useGetAllProductsQuery } from "../../API/Products_api";
 import ProductCart from "../../components/reused/ProductCart/ProductCart";
 import CustomButton from "../../components/reused/Buttons/Button";
 import NavigationPath from "../../components/reused/Buttons/NavigationPath";

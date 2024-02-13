@@ -7,7 +7,9 @@
     height: 36px;
     padding: 8px, 16px, 8px, 16px;
     border: 1px solid rgba(221, 221, 221, 1);
+    border-radius: 6px;
     color: rgba(139, 139, 139, 1);
+    background-color: white;
 }
 
 .third_button {
@@ -15,7 +17,9 @@
     height: 36px;
     padding: 8px, 16px, 8px, 16px;
     border: 1px solid rgba(221, 221, 221, 1);
+    border-radius: 6px;
     color: rgba(139, 139, 139, 1);
+    background-color: white;
 }
 
 .Line {
@@ -29,7 +33,9 @@
     height: 36px;
     padding: 8px, 16px, 8px, 16px;
     border: 1px solid rgba(221, 221, 221, 1);
+    border-radius: 6px;
     color: black;
+    background-color: white;
 }
 
 .description_container {
@@ -60,6 +66,8 @@
     gap: 16px;
     align-self: stretch;
 }
+
+
 
 .sale_price {
     font-size: 64px;
