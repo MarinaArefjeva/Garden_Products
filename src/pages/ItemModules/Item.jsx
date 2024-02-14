@@ -42,12 +42,19 @@ export default function Item({ product }) {
                 <h1 className={styles.title}>{product.title}</h1>
                 <div className={styles.prices}>
                   {product.discont_price ? (
-                    <>
-                      <p className={styles.sale_price}>
-                        {product.discont_price + "$"}
+                    <div className={styles.discont_price_container}>
+                      <div className={styles.price_container}>
+                        <p className={styles.sale_price}>
+                          {product.discont_price + "$"}
+                        </p>
+                        <p className={styles.price}>{product.price + "$"}</p>
+                      </div>
+                      <p className={styles.discont}>
+                        {`- ${Math.ceil(
+                          100 - product.discont_price / (product.price / 100)
+                        )} %`}
                       </p>
-                      <p className={styles.price}>{product.price + "$"}</p>
-                    </>
+                    </div>
                   ) : (
                     <p className={styles.sale_price}>{product.price + "$"}</p>
                   )}
